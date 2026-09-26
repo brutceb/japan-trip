@@ -162,30 +162,31 @@ section { margin-bottom: 64px; }
 
 .book-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
 }
 .book-item {
   background: var(--card);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  padding: 16px 18px 18px;
+  padding: 10px 12px 12px;
 }
-.book-item h3 { margin: 4px 0 8px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+.book-item h3 { margin: 2px 0 4px; font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.2; }
+.book-item .muted { font-size: 12px; line-height: 1.4; }
+.book-item .day-date { font-size: 10px; }
 .book-status {
   display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 9px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--line);
-  padding: 3px 7px;
-  margin-bottom: 8px;
+  padding: 1px 5px;
+  margin-bottom: 4px;
   color: var(--vermillion);
 }
 .book-item.is-booked .book-status { color: #2f6b3a; border-color: #b7d0bb; }
 .book-item.is-optional .book-status { color: var(--ink-soft); }
 .book-item.is-booked { opacity: 0.78; }
-.book-item .chip-link { display: inline-block; margin-top: 10px; }
+.book-item .chip-link { display: inline-block; margin-top: 6px; font-size: 12px; }
 
 .days { display: grid; gap: 10px; }
 .day {
@@ -309,6 +310,9 @@ footer {
   font-size: 13px;
 }
 
+@media (max-width: 900px) {
+  .book-list { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 800px) {
   .hero, .stats, .split, .blocks li, .panel-grid, .day-toggle, .book-list { grid-template-columns: 1fr; }
   .seal { margin: 8px 0 0; }
