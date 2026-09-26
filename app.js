@@ -8,10 +8,10 @@
 
   const escapeHtml = (value) =>
     String(value || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/&/g, "&")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
+      .replace(/"/g, """);
 
   document.title = (trip.title || "Japan") + " itinerary";
   setText("title", trip.title);
@@ -27,6 +27,24 @@
     div.className = "stat";
     div.innerHTML = `<b>${escapeHtml(item.value)}</b><span>${escapeHtml(item.label)}</span>`;
     overview.appendChild(div);
+  });
+
+  const bookList = document.getElementById("book-list");
+  const statusLabel = { open: "Book now", booked: "Booked", optional: "Optional" };
+  (trip.bookings || []).forEach((item) => {
+    const card = document.createElement("article");
+    card.className = "book-item is-" + (item.status || "open");
+    const link = item.link
+      ? `<a class="chip-link" href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.linkLabel || "Open link")}</a>`
+      : "";
+    card.innerHTML = `
+      <div class="book-status">${escapeHtml(statusLabel[item.status] || item.status)}</div>
+      <div class="day-date">${escapeHtml(item.when)}</div>
+      <h3>${escapeHtml(item.name)}</h3>
+      <p class="muted">${escapeHtml(item.detail)}</p>
+      ${link}
+    `;
+    bookList.appendChild(card);
   });
 
   const listFrom = (items) =>
