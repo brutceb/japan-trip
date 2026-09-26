@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Japan itinerary</title>
+  <meta name="description" content="Personal trip itinerary" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="mark" href="#top">
+        <b>Itinerary</b>
+        <span id="nav-title">Japan</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#days">Days</a>
+        <a href="#stay">Stay</a>
+        <a href="#move">Move</a>
+        <a href="#notes">Notes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero">
+      <div>
+        <div class="kicker" id="season">Upcoming trip</div>
+        <h1 id="title">Japan</h1>
+        <p class="subtitle" id="subtitle">Our itinerary</p>
+        <p class="tagline" id="tagline"></p>
+      </div>
+      <div class="seal" aria-hidden="true">
+        <div>
+          <small id="travelers">Travelers</small>
+          <strong>日本</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats" id="overview"></div>
+
+    <section id="days">
+      <div class="section-head">
+        <h2>Days & ports</h2>
+        <div class="toolbar">
+          <button type="button" class="text-btn" id="expand-all">Expand all</button>
+          <button type="button" class="text-btn" id="collapse-all">Collapse all</button>
+        </div>
+      </div>
+      <div class="days" id="day-list"></div>
+    </section>
+
+    <section id="stay">
+      <div class="section-head">
+        <h2>Lodging</h2>
+        <p>Hotels, inns, and ship nights.</p>
+      </div>
+      <div class="split" id="lodging"></div>
+    </section>
+
+    <section id="move">
+      <div class="section-head">
+        <h2>Flights, trains & ship</h2>
+        <p>The pieces that lock the calendar.</p>
+      </div>
+      <div class="split" id="transport"></div>
+    </section>
+
+    <section id="notes">
+      <div class="section-head">
+        <h2>Field notes</h2>
+        <p>Anything the group should remember.</p>
+      </div>
+      <div class="card">
+        <ul class="list" id="notes-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Personal itinerary site · ready for GitHub Pages</div>
+  </footer>
+
+  <script src="itinerary.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
