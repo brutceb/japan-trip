@@ -7,11 +7,13 @@
   };
 
   const escapeHtml = (value) =>
-    String(value || "")
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
+    String(value || "").replace(/[&<>"']/g, (ch) => {
+      if (ch === "&") return "\u0026amp;";
+      if (ch === "<") return "\u0026lt;";
+      if (ch === ">") return "\u0026gt;";
+      if (ch === '"') return "\u0026quot;";
+      return "\u0026#39;";
+    });
 
   document.title = (trip.title || "Japan") + " itinerary";
   setText("title", trip.title);
