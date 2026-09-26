@@ -4,95 +4,71 @@ window.TRIP.bookings = [
     status: "open",
     when: "Oct 16 · 1:00 PM",
     name: "RAGTIME Coin Factory",
-    detail: "Reservation-only. One group per slot. Arrive 5 minutes early. 4+ people must call or email.",
+    detail: "One group per slot. Arrive 5 minutes early.",
     link: "https://ragtime-umbrella.stores.jp/reserve/ragtime-coin/1305804",
-    linkLabel: "Reserve slot"
+    linkLabel: "Reserve"
   },
   {
     status: "open",
     when: "Oct 16 · 3:00 PM",
-    name: "Asakusa chopstick workshop",
-    detail: "CRAFTJAPAN / Chopstick Making Tokyo near Senso-ji. Book the 3:00 class.",
+    name: "Chopstick workshop",
+    detail: "Asakusa / CRAFTJAPAN. Book the 3:00 class.",
     link: "https://chopstickmakingjapan.com/tokyo",
-    linkLabel: "Book class"
+    linkLabel: "Book"
   },
   {
     status: "open",
     when: "Oct 16 · 5:30 PM",
-    name: "Tokyo Skytree timed ticket",
-    detail: "Buy the web timed ticket. Evening slots go first; door tickets cost more.",
+    name: "Tokyo Skytree",
+    detail: "Timed web ticket. Evening slots go first.",
     link: "https://www.tokyo-skytree.jp/ticket/",
-    linkLabel: "Official tickets"
+    linkLabel: "Tickets"
   },
   {
     status: "open",
     when: "Oct 17 · 11:00 AM",
-    name: "Ramen class at Shinjuku Ale",
-    detail: "This is lunch. The 12:05 leave for Shibuya only works if the class is reserved and starts on time.",
+    name: "Ramen class",
+    detail: "Shinjuku Ale. This is lunch — leave by 12:05.",
     link: "",
     linkLabel: ""
   },
   {
-    status: "booked",
-    when: "Oct 17 · 4:00 PM check-in",
-    name: "Samurai Restaurant",
-    detail: "4:30–6:10 show. Locked. 18+ with ID. Be in 1-7-7 Kabukicho by 3:55.",
-    link: "https://samurai-restaurant.tokyo/",
-    linkLabel: "Venue"
-  },
-  {
     status: "open",
-    when: "Oct 18 · 4:00 or 4:20 PM",
-    name: "Shibuya Sky timed ticket",
-    detail: "Sunset ~5:05. Book the 16:00 or 16:20 slot. Official site is cheaper than the door.",
+    when: "Oct 18 · 4:00 / 4:20 PM",
+    name: "Shibuya Sky",
+    detail: "Sunset ~5:05. Book 16:00 or 16:20.",
     link: "https://www.shibuya-scramble-square.com/sky/",
-    linkLabel: "Official tickets"
+    linkLabel: "Tickets"
   },
   {
     status: "open",
     when: "Oct 18 · 6:30 PM",
-    name: "Maru Bengara dinner",
-    detail: "圓 弁柄, Shibuya Stream 3F. 12-dish omakase. Reserve if you want the private room.",
-    link: "",
-    linkLabel: ""
-  },
-  {
-    status: "booked",
-    when: "Busan · 8:00 AM",
-    name: "Suni / Busan day",
-    detail: "Locked. Meet at the cruise terminal. Hard stop back at 3:00 PM.",
-    link: "",
-    linkLabel: ""
-  },
-  {
-    status: "booked",
-    when: "Oct 25 · 8:30 AM",
-    name: "Aburatsu private sedan",
-    detail: "Locked. Udo Jingu, Namikiri, Obi lunch, castle town, port by ~1:45. Send allergies to the guide.",
+    name: "Maru Bengara",
+    detail: "Omakase at Shibuya Stream 3F. Reserve the room.",
     link: "",
     linkLabel: ""
   },
   {
     status: "optional",
     when: "Hiroshima morning",
-    name: "Peace Memorial Museum web ticket",
-    detail: "Not required for 9:00–11:15, but a prepaid ticket skips the line. On sale 90 days out.",
+    name: "Peace Museum ticket",
+    detail: "Not required, skips the line.",
     link: "https://hpmmuseum.jp/",
-    linkLabel: "Museum tickets"
+    linkLabel: "Tickets"
   },
   {
     status: "optional",
     when: "Oct 18 · 12:30 PM",
-    name: "Perfume blending hold",
-    detail: "AROMABLENDBAR / EMUCLARET. Message them for a 12:30 hold so the line does not eat lunch.",
+    name: "Perfume hold",
+    detail: "AROMABLENDBAR / EMUCLARET. 30-minute window.",
     link: "",
     linkLabel: ""
   },
   {
     status: "optional",
     when: "Tokushima · 2:00 PM",
-    name: "Awa Odori Kaikan show",
-    detail: "Often same-day, but Monday has no later show. Confirm the 2:00 performance.",
+    name: "Awa Odori show",
+    detail: "Monday has no later show. Confirm 2:00.",
     link: "",
     linkLabel: ""
   }
