@@ -93,7 +93,7 @@
       .map(
         (option) => `<article class="option">
           <div class="option-top">
-            <h4>${escapeHtml(option.name)}</h4>
+            <h4>${linkedName(option.name, option.link || option.map)}</h4>
             <div class="chips">
               ${option.effort ? `<span>${escapeHtml(option.effort)}</span>` : ""}
               ${option.timeNeeded ? `<span>${escapeHtml(option.timeNeeded)}</span>` : ""}
@@ -185,7 +185,7 @@
     card.className = "card";
     card.innerHTML = `
       <div class="day-date">${escapeHtml(item.city)}</div>
-      <h3>${escapeHtml(item.name)}</h3>
+      <h3>${linkedName(item.name, item.link || item.map)}</h3>
       <p class="muted">${escapeHtml(item.nights)}</p>
       <p class="muted">${escapeHtml(item.note)}</p>
     `;
