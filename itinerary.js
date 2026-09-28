@@ -12,15 +12,17 @@ window.TRIP = {
   ],
   days: (window.TOKYO_DAYS || []).concat(window.PORT_DAYS || []),
   lodging: [
-    { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 16–19", note: "Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18." },
+    { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 16–19", note: "Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
     { city: "Cruise", name: "Diamond Princess", nights: "From Oct 19", note: "Nagasaki, Busan, Hiroshima, Aburatsu, Tokushima, Shimizu." }
   ],
+
   transport: [
     { when: "Oct 16", what: "Walk + taxi + Tobu Skytree Line", detail: "Ueno to Ameyoko on foot, taxi to Kappabashi, one-stop train to Skytree." },
     { when: "Oct 17", what: "JR + Tokyo Monorail + Yamanote", detail: "Shinjuku to Hamamatsucho to Oikeibajo-mae, then Harajuku Takeshita Exit." },
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
     { when: "Oct 25", what: "Private sedan from Aburatsu", detail: "Port pickup 8:30. Back about 1:45." }
   ],
+
   notes: [
     "Place names in the plan and food lists open Google Maps.",
     "Book-these is only ramen class (Sunday 11:00) and Shibuya Sky (Sunday 16:20).",
