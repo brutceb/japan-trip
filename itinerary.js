@@ -17,7 +17,7 @@ window.TRIP = {
   ],
 
   transport: [
-    { when: "Oct 16", what: "Walk + taxi + Tobu Skytree Line", detail: "Ueno to Ameyoko on foot, taxi to Kappabashi, one-stop train to Skytree." },
+    { when: "Oct 16", what: "Yamanote + taxi/Ginza + Tobu Skytree Line", detail: "Shinjuku to Ueno Park Exit. Taxi or Ginza Line to RAGTIME at 10:00. One-stop Tobu to Skytree." },
     { when: "Oct 17", what: "JR + Tokyo Monorail + Yamanote", detail: "Shinjuku to Hamamatsucho to Oikeibajo-mae, then Harajuku Takeshita Exit." },
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
     { when: "Oct 25", what: "Private sedan from Aburatsu", detail: "Port pickup 8:30. Back about 1:45." }
@@ -26,6 +26,7 @@ window.TRIP = {
   notes: [
     "Place names in the plan and food lists open Google Maps.",
     "Book-these is only ramen class (Sunday 11:00) and Shibuya Sky (Sunday 16:20).",
+    "Friday: RAGTIME at 10:00. Do not walk from Ameyoko. Kimono after chopsticks, temple after dark.",
     "Saturday: confirm Oi flea on trx.jp. If cancelled, UNU market then the same lunch.",
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",
     "Tokushima is a Monday. Inotani is closed.",
