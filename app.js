@@ -49,9 +49,21 @@
     bookList.appendChild(card);
   });
 
+  const linkedName = (name, href) =>
+    href
+      ? `<a class="place-link" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
+      : escapeHtml(name);
+
   const listFrom = (items) =>
     (items || [])
-      .map((item) => `<li>${escapeHtml(item)}</li>`)
+      .map((item) => {
+        if (item && typeof item === "object") {
+          const label = linkedName(item.name || item.title || "", item.link || item.map);
+          const note = item.note || item.detail ? ` — ${escapeHtml(item.note || item.detail)}` : "";
+          return `<li>${label}${note}</li>`;
+        }
+        return `<li>${escapeHtml(item)}</li>`;
+      })
       .join("");
 
   const dayList = document.getElementById("day-list");
@@ -70,7 +82,7 @@
         (block) => `<li>
           <div class="time">${escapeHtml(block.time)}</div>
           <div>
-            <div class="place">${escapeHtml(block.title)}</div>
+            <div class="place">${linkedName(block.title, block.link || block.map)}</div>
             ${block.detail ? `<p class="note">${escapeHtml(block.detail)}</p>` : ""}
           </div>
         </li>`
