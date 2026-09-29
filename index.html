@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Japan itinerary</title>
   <meta name="description" content="Personal trip itinerary" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Japan trip" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body>
   <header class="nav">
@@ -17,9 +19,8 @@
       <nav class="nav-links">
         <a href="#book">Book</a>
         <a href="#days">Days</a>
-        <a href="#stay">Stay</a>
-        <a href="#move">Move</a>
-        <a href="#notes">Notes</a>
+        <a href="#pocket">Pocket</a>
+        <button type="button" class="text-btn" id="jump-today">Today</button>
       </nav>
     </div>
   </header>
@@ -45,7 +46,7 @@
     <section id="book">
       <div class="section-head">
         <h2>Book these</h2>
-        <p>Only two things left: Sunday ramen class and Shibuya Sky.</p>
+        <p>Only Shibuya Sky is left. Window opens about five days out.</p>
       </div>
       <div class="book-list" id="book-list"></div>
     </section>
@@ -61,42 +62,66 @@
       <div class="days" id="day-list"></div>
     </section>
 
-    <section id="stay">
+    <section id="pocket">
       <div class="section-head">
-        <h2>Lodging</h2>
-        <p>Hotels, inns, and ship nights.</p>
+        <h2>Pocket</h2>
+        <p>Show a taxi driver the Japanese line. Copy if you need to paste.</p>
       </div>
-      <div class="split" id="lodging"></div>
-    </section>
-
-    <section id="move">
-      <div class="section-head">
-        <h2>Flights, trains & ship</h2>
-        <p>The pieces that lock the calendar.</p>
-      </div>
-      <div class="split" id="transport"></div>
-    </section>
-
-    <section id="notes">
-      <div class="section-head">
-        <h2>Field notes</h2>
-        <p>Anything the group should remember.</p>
-      </div>
-      <div class="card">
-        <ul class="list" id="notes-list"></ul>
+      <div class="pocket-grid">
+        <article class="card taxi">
+          <div class="day-date">Hotel taxi card</div>
+          <h3>Hyatt Regency Tokyo</h3>
+          <p class="jp" id="addr-hyatt">&#26481;&#20140;&#37117;&#26032;&#23487;&#21306;&#35199;&#26032;&#23487;2-7-2 &#12495;&#12452;&#12450;&#12483;&#12488; &#12522;&#12540;&#12472;&#12455;&#12531;&#12471;&#12540;&#26481;&#20140;</p>
+          <p class="muted">2-7-2 Nishi-Shinjuku. Tochomae A7 or Shinjuku West 9 min.</p>
+          <p class="muted">Tel 03-3348-1234</p>
+          <div class="chips">
+            <button type="button" class="text-btn copy-btn" data-copy="&#26481;&#20140;&#37117;&#26032;&#23487;&#21306;&#35199;&#26032;&#23487;2-7-2 &#12495;&#12452;&#12450;&#12483;&#12488; &#12522;&#12540;&#12472;&#12455;&#12531;&#12471;&#12540;&#26481;&#20140;">Copy Japanese</button>
+            <a class="chip-link" href="https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" target="_blank" rel="noopener">Map</a>
+            <a class="chip-link" href="tel:+81333481234">Call hotel</a>
+          </div>
+        </article>
+        <article class="card taxi">
+          <div class="day-date">Ship taxi card</div>
+          <h3>Osanbashi Terminal</h3>
+          <p class="jp" id="addr-osanbashi">&#27178;&#27996;&#24066;&#20013;&#21306;&#28023;&#23736;&#36890;1-1-4 &#22823;&#12373;&#12435;&#27211;&#22269;&#38555;&#23458;&#33337;&#12479;&#12540;&#12511;&#12490;&#12523;</p>
+          <p class="muted">Say Osanbashi, Diamond Princess. Confirm the pier on the app Oct 18.</p>
+          <div class="chips">
+            <button type="button" class="text-btn copy-btn" data-copy="&#27178;&#27996;&#24066;&#20013;&#21306;&#28023;&#23736;&#36890;1-1-4 &#22823;&#12373;&#12435;&#27211;&#22269;&#38555;&#23458;&#33337;&#12479;&#12540;&#12511;&#12490;&#12523;">Copy Japanese</button>
+            <a class="chip-link" href="https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" target="_blank" rel="noopener">Map</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="day-date">Right now</div>
+          <h3 id="jp-clock">Japan time</h3>
+          <p class="muted" id="jp-clock-sub">Uses Tokyo time even if your phone is still on Eastern.</p>
+          <div class="chips">
+            <a class="chip-link" href="https://www.google.com/maps/dir/?api=1&destination=Hyatt+Regency+Tokyo+Nishi-Shinjuku&travelmode=transit" target="_blank" rel="noopener">Transit to hotel</a>
+            <a class="chip-link" href="https://translate.google.com/?sl=ja&tl=en&op=camera" target="_blank" rel="noopener">Camera translate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="day-date">If something breaks</div>
+          <h3>Numbers</h3>
+          <ul class="list tight">
+            <li>Police 110 &middot; Ambulance / fire 119</li>
+            <li>Hyatt 03-3348-1234</li>
+            <li>Suica / PASMO on the phone. Cash for tiny stalls and Omoide.</li>
+            <li>Add this page to your home screen. It works offline after one load.</li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Personal itinerary site &middot; ready for GitHub Pages</div>
+    <div class="wrap">Personal itinerary &middot; add to home screen</div>
   </footer>
 
-  <script src="days-bookends.js?v=14"></script>
-  <script src="days-tokyo.js?v=14"></script>
-  <script src="days-ports.js?v=14"></script>
-  <script src="itinerary.js?v=14"></script>
-  <script src="bookings.js?v=14"></script>
-  <script src="app.js?v=14"></script>
+  <script src="days-bookends.js?v=15"></script>
+  <script src="days-tokyo.js?v=15"></script>
+  <script src="days-ports.js?v=15"></script>
+  <script src="itinerary.js?v=15"></script>
+  <script src="bookings.js?v=15"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>
