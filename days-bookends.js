@@ -41,40 +41,14 @@ window.ARRIVAL_DAYS = [
     plan: [
       { time: "4:15p", title: "Land Haneda T3", detail: "DL 275. Immigration plus bags usually 45\u201375 minutes. Plan on walking out around 5:15\u20135:45. Do not start a far neighborhood tonight.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3" },
       { time: "5:15\u20135:45", title: "Clear the airport", detail: "Passport control, bags, customs. Buy a Suica or PASMO at the machines if you will take the train. Limousine-bus tickets are at the counter in arrivals.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3+arrivals" },
-      { time: "5:30\u20137:15", title: "Airport to hotel", detail: "Pick one. Train: Keikyu to Shinagawa then Yamanote to Shinjuku West, about 40\u201355 min plus a 9-minute walk. Limousine bus: about 50\u201370 min, no transfer, some runs stop at the Hyatt. Taxi: about 30 min, about 8,000 to 12,000 yen. Evening rush 5:00\u20137:30. Bags are easier on the bus or a taxi.", link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit" },
+      { time: "5:30\u20137:15", title: "Airport to hotel", detail: "Pick one. Train: Keikyu to Shinagawa then Yamanote to Shinjuku West, about 40\u201355 min plus a 9-minute walk. Limousine bus: about 50\u201370 min, no transfer, some runs stop at the Hyatt. Taxi: about 30 min, 8,000 to 12,000 yen. Evening rush 5:00\u20137:30. Bags are easier on the bus or a taxi.", link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit" },
       { time: "6:30\u20137:45", title: "Walk in and check in", detail: "Hyatt check-in from 2:00p so the room is ready. 9 minutes from Shinjuku West Exit, or Tochomae Exit A7 about 1 minute under the building. Shower. Bags down. Friday still leaves at 7:40.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
       { time: "7:45+", title: "Vague night near the hotel", detail: "Pick one option below. Do not lock a reservation. Keep it close and short.", link: "https://maps.google.com/?q=Omoide+Yokocho+Shinjuku" }
     ],
     options: [
-      {
-        name: "Omoide Yokocho",
-        effort: "Closest interesting",
-        timeNeeded: "30\u201345 min",
-        link: "https://maps.google.com/?q=Omoide+Yokocho+Shinjuku",
-        items: ["West Exit tracks. Yakitori, beer, standing. Cash. One stall and stop."]
-      },
-      {
-        name: "Shinjuku West shopping",
-        effort: "Indoor",
-        timeNeeded: "30\u201360 min",
-        link: "https://maps.google.com/?q=Odakyu+Department+Store+Shinjuku",
-        items: [
-          { name: "Odakyu / Keio basement", note: "Food floor. Bento, soba, croquette, sweets to take upstairs.", link: "https://maps.google.com/?q=Odakyu+Department+Store+Shinjuku+basement" },
-          { name: "Bic Camera Shinjuku West", note: "First look only. Sunday already has a Bic.", link: "https://maps.google.com/?q=Bic+Camera+Shinjuku+West" },
-          { name: "Uniqlo West Exit", note: "Only if you need a layer.", link: "https://maps.google.com/?q=Uniqlo+Shinjuku+West" }
-        ]
-      },
-      {
-        name: "Stay on the Hyatt block",
-        effort: "Lowest",
-        timeNeeded: "Whenever",
-        link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku",
-        items: [
-          { name: "7-Eleven in the hotel", note: "Ground floor. Onigiri, sandwiches, drinks. Open 24 hours.", link: "https://maps.google.com/?q=7-Eleven+Hyatt+Regency+Tokyo" },
-          { name: "Crossroads Kitchen", note: "Hotel buffet / restaurant. Dinner 5:30\u201310:00.", link: "https://maps.google.com/?q=Crossroads+Kitchen+Hyatt+Regency+Tokyo" },
-          { name: "Jade Garden or Nadaman", note: "Hotel Chinese or Japanese if you want to sit down and stay inside.", link: "https://maps.google.com/?q=Jade+Garden+Hyatt+Regency+Tokyo" }
-        ]
-      }
+      { name: "Omoide Yokocho", effort: "Closest interesting", timeNeeded: "30\u201345 min", link: "https://maps.google.com/?q=Omoide+Yokocho+Shinjuku", items: ["West Exit tracks. Yakitori, beer, standing. Cash. One stall and stop."] },
+      { name: "Shinjuku West shopping", effort: "Indoor", timeNeeded: "30\u201360 min", link: "https://maps.google.com/?q=Odakyu+Department+Store+Shinjuku", items: [{ name: "Odakyu / Keio basement", note: "Food floor. Bento, soba, croquette, sweets to take upstairs.", link: "https://maps.google.com/?q=Odakyu+Department+Store+Shinjuku+basement" }, { name: "Bic Camera Shinjuku West", note: "First look only. Sunday already has a Bic.", link: "https://maps.google.com/?q=Bic+Camera+Shinjuku+West" }, { name: "Uniqlo West Exit", note: "Only if you need a layer.", link: "https://maps.google.com/?q=Uniqlo+Shinjuku+West" }] },
+      { name: "Stay on the Hyatt block", effort: "Lowest", timeNeeded: "Whenever", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku", items: [{ name: "7-Eleven in the hotel", note: "Ground floor. Onigiri, sandwiches, drinks. Open 24 hours.", link: "https://maps.google.com/?q=7-Eleven+Hyatt+Regency+Tokyo" }, { name: "Crossroads Kitchen", note: "Hotel buffet / restaurant. Dinner 5:30\u201310:00.", link: "https://maps.google.com/?q=Crossroads+Kitchen+Hyatt+Regency+Tokyo" }, { name: "Jade Garden or Nadaman", note: "Hotel Chinese or Japanese if you want to sit down and stay inside.", link: "https://maps.google.com/?q=Jade+Garden+Hyatt+Regency+Tokyo" }] }
     ],
     food: [
       { name: "Omoide Yokocho yakitori", note: "Closest don't-miss near the Hyatt.", link: "https://maps.google.com/?q=Omoide+Yokocho+Shinjuku" },
@@ -89,7 +63,7 @@ window.ARRIVAL_DAYS = [
       "Then 40\u201380 min to the hotel. Check in about 6:30\u20137:45.",
       "Train 40\u201355 min + 9-min walk from Shinjuku West. Limousine bus 50\u201370 min, some runs stop at the Hyatt (about 1,400 yen). Taxi about 30 min, 8,000 to 12,000 yen.",
       "Hotel check-in from 2:00p. Tochomae Exit A7 is about 1 minute under the building.",
-      "Friends landed Narita Oct 7. Friends fly Oct 29. Friday starts at 7:40."
+      "Friends landed Narita Oct 7. Friday starts at 7:40."
     ]
   }
 ];
@@ -112,29 +86,14 @@ window.EMBARK_DAYS = [
       { time: "3:00 PM", title: "Ship sails", detail: "Be on board well before 3:00. All-aboard is earlier than sail-away.", link: "https://maps.google.com/?q=Yokohama+port" }
     ],
     options: [
-      {
-        name: "Eat on the ship",
-        effort: "Default",
-        timeNeeded: "After check-in",
-        items: ["Buffet or the first assigned restaurant."]
-      },
-      {
-        name: "Shinjuku station bite before the transfer",
-        effort: "If you leave late morning",
-        timeNeeded: "15 min",
-        link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit",
-        items: ["Onigiri or a bakery bag from Lumine / Odakyu. Eat on the way."]
-      }
+      { name: "Eat on the ship", effort: "Default", timeNeeded: "After check-in", items: ["Buffet or the first assigned restaurant."] },
+      { name: "Shinjuku station bite before the transfer", effort: "If you leave late morning", timeNeeded: "15 min", link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit", items: ["Onigiri or a bakery bag from Lumine / Odakyu. Eat on the way."] }
     ],
     food: [
       { name: "Ship lunch", note: "First meal on board. Do this unless you already ate.", link: "https://maps.google.com/?q=Diamond+Princess" },
       { name: "Shinjuku bakery / onigiri", note: "Only as a bridge from the Hyatt to the pier.", link: "https://maps.google.com/?q=Lumine+Shinjuku" }
     ],
-    logistics: [
-      "Confirm the exact Yokohama pier the day before.",
-      "Ship departs 3:00 PM. All-aboard is earlier.",
-      "Pack ship-day clothes Oct 18."
-    ]
+    logistics: ["Confirm the exact Yokohama pier the day before.", "Ship departs 3:00 PM. All-aboard is earlier.", "Pack ship-day clothes Oct 18."]
   },
   {
     id: "oct-20",
@@ -146,12 +105,8 @@ window.EMBARK_DAYS = [
     hours: "All day on board",
     stay: "Ship",
     map: "https://maps.google.com/?q=Diamond+Princess",
-    plan: [
-      { time: "All day", title: "At sea", detail: "Nagasaki is tomorrow, ship in at 10:00. Use today for rest, laundry, and the first formal or anytime dining slot." }
-    ],
-    options: [
-      { name: "Ship day as written", effort: "Low", timeNeeded: "All day", items: ["Eat on board", "Do not plan a port"] }
-    ],
+    plan: [{ time: "All day", title: "At sea", detail: "Nagasaki is tomorrow, ship in at 10:00. Use today for rest, laundry, and the first formal or anytime dining slot." }],
+    options: [{ name: "Ship day as written", effort: "Low", timeNeeded: "All day", items: ["Eat on board", "Do not plan a port"] }],
     food: [
       { name: "Main dining room", note: "Assigned seating if you took it.", link: "https://maps.google.com/?q=Diamond+Princess" },
       { name: "Horizon Court buffet", note: "Anytime. Useful after jet lag." },
@@ -176,9 +131,7 @@ window.KANMON_DAYS = [
       { time: "8:00\u201310:00", title: "Kanmon Straits", detail: "Scenic cruising. Deck if the weather is decent. This is not a port. Nobody gets off.", link: "https://maps.google.com/?q=Kanmon+Straits+Kanmonkyo" },
       { time: "Rest of day", title: "At sea toward Hiroshima", detail: "Hiroshima is 7:00 tomorrow. Early night." }
     ],
-    options: [
-      { name: "Deck for the straits", effort: "Low", timeNeeded: "8:00\u201310:00", items: ["Coffee on an open deck", "Then back inside"] }
-    ],
+    options: [{ name: "Deck for the straits", effort: "Low", timeNeeded: "8:00\u201310:00", items: ["Coffee on an open deck", "Then back inside"] }],
     food: [
       { name: "Ship breakfast on deck", note: "Coffee and something small while the straits go by." },
       { name: "Ship lunch and dinner", note: "No local stall today. Kanmon fugu is for people on shore." }
@@ -193,49 +146,37 @@ window.END_DAYS = [
     date: "Oct 28",
     weekday: "Wed",
     kind: "Depart",
-    port: "Yokohama \u2014 you fly 4:25",
-    summary: "Dock 6:30 AM. Off the ship 8:00\u20139:30. Loose morning in Yokohama if time. Be at the airport by 1:25. Flight 4:25. Friends stay until the 29th.",
-    hours: "Dock 6:30 \u00b7 airport 1:25 \u00b7 flight 4:25",
+    port: "Yokohama \u2014 HND 4:25p",
+    summary: "Dock 6:30a. Off ship 8:00\u20139:30. One loose zone near the pier if you are early. Leave by noon. Airport 1:25. HND 4:25p DL 294 to ATL, then DL 2813 to CLT.",
+    hours: "Dock 6:30 \u00b7 airport 1:25 \u00b7 HND 4:25p",
     stay: "In the air",
     map: "https://maps.google.com/?q=Yokohama+cruise+terminal",
     plan: [
-      { time: "6:30 AM", title: "Ship docks Yokohama", detail: "Stay seated until your group is called. Bags in the terminal hall.", link: "https://maps.google.com/?q=Yokohama+Osanbashi+Pier" },
+      { time: "6:30a", title: "Ship docks Yokohama", detail: "Stay seated until your group is called. Bags in the terminal hall.", link: "https://maps.google.com/?q=Yokohama+Osanbashi+Pier" },
       { time: "About 8:00\u20139:30", title: "Off the ship", detail: "Immigration and bag pickup. Time depends on the call group.", link: "https://maps.google.com/?q=Yokohama+cruise+terminal" },
-      { time: "9:30\u201312:00", title: "Loose morning \u2014 only if you are off early", detail: "Do not lock a plan. Bags with you. Pick one idea below or go straight to the airport.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" },
-      { time: "By 12:00", title: "Leave for the airport", detail: "Hard edge. Be inside the terminal by 1:25. Flight 4:25.", link: "https://maps.google.com/?q=Haneda+Airport" },
-      { time: "1:25 PM", title: "At the airport", detail: "Three hours before 4:25. Eat there if the morning was a miss.", link: "https://maps.google.com/?q=Haneda+Airport+food" },
-      { time: "4:25 PM", title: "Your flight", detail: "Times only. Friends fly tomorrow, the 29th." }
+      { time: "9:30\u201312:00", title: "Loose morning \u2014 one zone only", detail: "Only if you are off early. Bags with you. High-ticket items you did not do in Tokyo: Motomachi shopping, Chinatown food, Red Brick crafts, Landmark Plaza character shop. Pick one cluster. Do not lock a plan.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" },
+      { time: "By 12:00", title: "Leave for Haneda", detail: "Hard edge. Be inside the terminal by 1:25.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3" },
+      { time: "1:25p", title: "At Haneda", detail: "Three hours before 4:25. Eat there if the morning was a miss.", link: "https://maps.google.com/?q=Haneda+Airport+food" },
+      { time: "4:25p", title: "HND to ATL \u00b7 DL 294", detail: "Lands Atlanta 3:50p. Then ATL 7:05p to CLT 8:18p on DL 2813.", link: "https://maps.google.com/?q=Hartsfield-Jackson+Atlanta+Airport" }
     ],
     options: [
-      {
-        name: "Straight to the airport",
-        effort: "Safest",
-        timeNeeded: "Leave as soon as bags are in hand",
-        items: ["Best if deboard runs late or bags are heavy. Airport food is the lunch."]
-      },
-      {
-        name: "Yokohama waterfront if you are off by 9:30",
-        effort: "One zone only",
-        timeNeeded: "Until 12:00",
-        link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse",
-        items: [
-          { name: "Red Brick Warehouse", note: "Shops and a snack. Close if you dock at Osanbashi.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" },
-          { name: "Yokohama Chinatown", note: "Pork bun or fried wonton to walk with. Do not sit for a long lunch.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
-          { name: "Motomachi / Bashamichi", note: "A few shops if you want one last street.", link: "https://maps.google.com/?q=Motomachi+Yokohama" }
-        ]
-      }
+      { name: "Straight to Haneda", effort: "Safest", timeNeeded: "Leave as soon as bags are in hand", items: ["Best if deboard runs late or bags are heavy. Airport food is the lunch."] },
+      { name: "Motomachi \u2014 the shopping you skipped", effort: "High-ticket street", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama", items: [{ name: "Motomachi-dori", note: "Yokohama old foreign shopping street. Leather, antiques, boutiques, tea. The nicer shop street you did not get in Shinjuku.", link: "https://maps.google.com/?q=Motomachi-dori+Yokohama" }, { name: "Bashamichi", note: "One street over. Craft and cafe stops if Motomachi is still opening.", link: "https://maps.google.com/?q=Bashamichi+Yokohama" }] },
+      { name: "Chinatown \u2014 the food you skipped", effort: "Walk from the pier", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Chinatown", items: [{ name: "Yokohama Chinatown", note: "Largest Chinatown in Japan. Walk-and-eat only. Pork bun, fried wonton, egg tart. Do not sit for a long lunch.", link: "https://maps.google.com/?q=Yokohama+Chinatown" }, { name: "Kiyoken shumai", note: "Yokohama local box. Buy to go if a stand is open.", link: "https://maps.google.com/?q=Kiyoken+Yokohama+Chinatown" }] },
+      { name: "Red Brick + Landmark \u2014 crafts and character", effort: "Closest to Osanbashi", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse", items: [{ name: "Red Brick Warehouse", note: "Shops open about 10:00. Crafts, souvenirs, a snack. Closest browse if you dock at Osanbashi.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" }, { name: "Pokemon Center Yokohama", note: "Landmark Plaza. The official character shop you did not lock in Tokyo.", link: "https://maps.google.com/?q=Pokemon+Center+Yokohama+Landmark+Plaza" }, { name: "Queen's Square / Landmark shops", note: "Indoor tax-free if you still need one last department-store pass.", link: "https://maps.google.com/?q=Queens+Square+Yokohama" }] }
     ],
     food: [
       { name: "Ship breakfast", note: "Eat before your call group if breakfast is still open." },
-      { name: "Yokohama Chinatown pork bun", note: "Walk-and-eat. Only if you have the loose morning.", link: "https://maps.google.com/?q=Yokohama+Chinatown+pork+bun" },
-      { name: "Shumai or a brick-warehouse snack", note: "Yokohama local bite.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse+food" },
-      { name: "Airport ramen or tonkatsu sando", note: "The reliable lunch if you skip Yokohama.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
+      { name: "Chinatown pork bun / wonton", note: "The bite you did not get in Tokyo. Walk-and-eat.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
+      { name: "Kiyoken shumai", note: "Yokohama don't-miss box. Take it with you.", link: "https://maps.google.com/?q=Kiyoken+shumai+Yokohama" },
+      { name: "Red Brick snack or coffee", note: "Only after 10:00 when shops open.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse+food" },
+      { name: "Haneda ramen or tonkatsu sando", note: "The reliable lunch if you skip the port walk.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
     ],
     logistics: [
-      "You fly Oct 28 at 4:25. Be at the airport by 1:25.",
-      "Leave Yokohama by 12:00 even if the morning was short.",
-      "Friends fly Oct 29. No Oct 29 on this itinerary.",
-      "Confirm the exact Yokohama pier the night before."
+      "Dock 6:30a. Off ship about 8:00\u20139:30. Leave Yokohama by 12:00.",
+      "Be at Haneda by 1:25. HND 4:25p DL 294 to ATL 3:50p. ATL 7:05p DL 2813 to CLT 8:18p.",
+      "Red Brick shops about 10:00. Chinatown food is the earlier option.",
+      "One zone only. Bags with you. Confirm the exact pier the night before."
     ]
   }
 ];
