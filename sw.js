@@ -1,18 +1,18 @@
 /* Offline cache for the whole itinerary site. Bump VERSION when files change. */
-const VERSION = "japan-trip-v16";
+const VERSION = "japan-trip-v17";
 const ASSETS = [
   "./",
   "index.html",
   "pocket.html",
   "manifest.webmanifest",
   "icon.svg",
-  "styles.css?v=16",
-  "days-bookends.js?v=16",
-  "days-tokyo.js?v=16",
-  "days-ports.js?v=16",
-  "itinerary.js?v=16",
-  "bookings.js?v=16",
-  "app.js?v=16"
+  "styles.css?v=17",
+  "days-bookends.js?v=17",
+  "days-tokyo.js?v=17",
+  "days-ports.js?v=17",
+  "itinerary.js?v=17",
+  "bookings.js?v=17",
+  "app.js?v=17"
 ];
 
 self.addEventListener("install", (event) => {

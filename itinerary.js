@@ -42,7 +42,7 @@ window.TRIP = {
   notes: [
     "Place names in the plan and food lists open Google Maps.",
     "Book-these: Shibuya Sky (Sunday 16:20, sale Oct 4 00:00 Japan time) and RAGTIME (Friday 10:00, booking in progress). Ramen, chopsticks, Skytree and Samurai are booked.",
-    "Friday: RAGTIME at 10:00. Do not walk from Ameyoko. Kimono after chopsticks, temple after dark.",
+    "Friday: RAGTIME at 10:00. Do not walk from Ameyoko. Asakusa lunch, Nakamise and kimono 12:40–2:40 PM, before chopsticks at 3:00. Temple after dark.",
     "Saturday: confirm Oi flea on trx.jp. If cancelled, UNU market then the same lunch.",
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",
     "Tokushima is a Monday. Inotani is closed.",
