@@ -24,8 +24,8 @@ window.TRIP = {
       .concat(window.END_DAYS || []);
   })(),
   lodging: [
-    { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 15\u201319", note: "You arrive Oct 15. Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
-    { city: "Cruise", name: "Diamond Princess", nights: "Oct 19\u201328", note: "Sail 3:00 PM Oct 19. Dock Yokohama 6:30 AM Oct 28. You fly that afternoon.", link: "https://maps.google.com/?q=Yokohama+cruise+terminal" }
+    { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 15\u201319", note: "You arrive Oct 15. Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18. Checkout 11:00 Oct 19.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
+    { city: "Cruise", name: "Diamond Princess", nights: "Oct 19\u201328", note: "Osanbashi check-in 12:00\u201314:00. All-aboard 14:00. Sail 15:00 Oct 19. Dock 6:30 AM Oct 28.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" }
   ],
 
   transport: [
@@ -34,7 +34,7 @@ window.TRIP = {
     { when: "Oct 16", what: "Yamanote + taxi/Ginza + Tobu Skytree Line", detail: "Shinjuku to Ueno Park Exit. Taxi or Ginza Line to RAGTIME at 10:00. One-stop Tobu to Skytree." },
     { when: "Oct 17", what: "JR + Tokyo Monorail + Yamanote", detail: "Shinjuku to Hamamatsucho to Oikeibajo-mae, then Harajuku Takeshita Exit." },
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
-    { when: "Oct 19", what: "Hyatt to Yokohama cruise terminal", detail: "Board mid-morning. Ship sails 3:00 PM. Confirm the pier." },
+    { when: "Oct 19", what: "Hyatt to Osanbashi \u00b7 check-in 12:00\u201314:00 \u00b7 sail 15:00", detail: "Leave hotel by 11:15. Recommended at the terminal 13:00. Official latest / all-aboard 14:00." },
     { when: "Oct 25", what: "Private sedan from Aburatsu", detail: "Port pickup 8:30. Back about 1:45." },
     { when: "Oct 28", what: "HND 4:25p DL 294 \u2192 ATL 3:50p \u00b7 ATL 7:05p DL 2813 \u2192 CLT 8:18p", detail: "Dock 6:30a. Off ship 8:00\u20139:30. Airport by 1:25." }
   ],
@@ -48,6 +48,7 @@ window.TRIP = {
     "Tokushima is a Monday. Inotani is closed.",
     "Shimizu still needs a walking plan. Ship there 13:00\u201319:00.",
     "You leave CLT Oct 14 at 9:35a on DL 1639, then DTW 1:45p on DL 275. Land Haneda Oct 15 at 4:15p. You fly Oct 28: HND 4:25p DL 294 to ATL, then ATL 7:05p DL 2813 to CLT 8:18p. Be at Haneda by 1:25.",
-    "Sea days: Oct 20 full sea, Oct 23 Kanmon Straits 8:00\u201310:00 on deck."
+    "Sea days: Oct 20 full sea, Oct 23 Kanmon Straits 8:00\u201310:00 on deck.",
+    "Oct 19: Princess check-in about 12:00. Recommended at Osanbashi by 13:00. Official all-aboard 14:00. Sail 15:00."
   ]
 };
