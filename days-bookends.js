@@ -74,26 +74,35 @@ window.EMBARK_DAYS = [
     date: "Oct 19",
     weekday: "Mon",
     kind: "Embark",
-    port: "Yokohama \u2014 board Diamond Princess",
-    summary: "Leave the Hyatt in the morning. Board mid-morning. Ship leaves 3:00 PM.",
-    hours: "Board morning \u00b7 sail 15:00",
+    port: "Osanbashi \u2014 board Diamond Princess",
+    summary: "Check-in opens about 12:00. Be at Osanbashi by 13:00 if you can. Official latest 14:00. All-aboard / check-in cutoff 14:00. Ship sails 15:00.",
+    hours: "Check-in 12:00 \u00b7 latest 14:00 \u00b7 sail 15:00",
     stay: "Diamond Princess",
-    map: "https://maps.google.com/?q=Yokohama+cruise+terminal",
+    map: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal",
     plan: [
-      { time: "Morning", title: "Leave the Hyatt", detail: "Pack passports and boarding papers the night of Oct 18. Confirm the exact pier the day before.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
-      { time: "Mid-morning", title: "Yokohama cruise terminal", detail: "Pier still to confirm. Allow extra time for traffic and check-in lines.", link: "https://maps.google.com/?q=Yokohama+Osanbashi+Pier" },
-      { time: "On board", title: "Find the cabin, eat on the ship", detail: "Lunch on board is the easy move. No need for a Yokohama restaurant.", link: "https://maps.google.com/?q=Diamond+Princess+Yokohama" },
-      { time: "3:00 PM", title: "Ship sails", detail: "Be on board well before 3:00. All-aboard is earlier than sail-away.", link: "https://maps.google.com/?q=Yokohama+port" }
+      { time: "Night of Oct 18", title: "Pack and confirm the pier", detail: "Passports, Princess app check-in done, bags tagged. Confirm Osanbashi vs Daikoku on the app. Hyatt checkout is 11:00.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
+      { time: "By 11:00\u201311:15", title: "Leave the Hyatt", detail: "Door to Osanbashi is about 45\u201370 minutes. Taxi 40\u201360 min. Train: JR to Sakuragicho or Minatomirai Line to Nihon-odori, then 7\u201310 min walk. Leave by 11:15 so you are not gambling on Monday traffic.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
+      { time: "About 12:00\u201312:30", title: "Arrive Osanbashi", detail: "Yokohama International Passenger Terminal, 1-1-4 Kaigandori. Check-in opens about noon. The first hour is the longest line. Porters take bags from the taxi. No shuttle from the station.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "12:00\u201314:00", title: "Check-in window", detail: "Princess official window for 2026 Yokohama sailings: noon until one hour before sail. Have passports and the app ready. After you board you cannot go back ashore.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "13:00", title: "Recommended latest at the door", detail: "Princess FAQ: arrive two hours before sail. 13:00 is the comfortable latest.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "14:00", title: "Official all-aboard / cutoff", detail: "Princess Japan: finish check-in by 14:00. Arrive after 14:00 and they can refuse boarding. This is the hard latest at the terminal, not at the Hyatt.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "On board", title: "Cabin and ship lunch", detail: "Find the cabin. Eat on the ship. No Yokohama restaurant after you check in.", link: "https://maps.google.com/?q=Diamond+Princess+Yokohama" },
+      { time: "15:00", title: "Ship sails", detail: "Yokohama City and Princess both list 15:00 off Osanbashi. All-aboard was 14:00.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" }
     ],
     options: [
-      { name: "Eat on the ship", effort: "Default", timeNeeded: "After check-in", items: ["Buffet or the first assigned restaurant."] },
-      { name: "Shinjuku station bite before the transfer", effort: "If you leave late morning", timeNeeded: "15 min", link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit", items: ["Onigiri or a bakery bag from Lumine / Odakyu. Eat on the way."] }
+      { name: "Eat on the ship", effort: "Default", timeNeeded: "After check-in", items: ["Buffet or the first assigned restaurant. Do this."] },
+      { name: "Shinjuku station bite before you leave", effort: "Only if you leave after 11:00", timeNeeded: "10\u201315 min", link: "https://maps.google.com/?q=Shinjuku+Station+West+Exit", items: ["Onigiri or a bakery bag from Lumine / Odakyu. Eat in the taxi or on the train."] }
     ],
     food: [
       { name: "Ship lunch", note: "First meal on board. Do this unless you already ate.", link: "https://maps.google.com/?q=Diamond+Princess" },
-      { name: "Shinjuku bakery / onigiri", note: "Only as a bridge from the Hyatt to the pier.", link: "https://maps.google.com/?q=Lumine+Shinjuku" }
+      { name: "Shinjuku bakery / onigiri", note: "Only as a bridge from the Hyatt to Osanbashi.", link: "https://maps.google.com/?q=Lumine+Shinjuku" }
     ],
-    logistics: ["Confirm the exact Yokohama pier the day before.", "Ship departs 3:00 PM. All-aboard is earlier.", "Pack ship-day clothes Oct 18."]
+    logistics: [
+      "Osanbashi International Passenger Terminal. Confirm the pier on the Princess app Oct 18.",
+      "Check-in about 12:00 to 14:00. Recommended at the door by 13:00. Official latest 14:00.",
+      "All-aboard / check-in cutoff is 14:00. Sail 15:00. Late arrivals after 14:00 can be denied.",
+      "After you board you cannot go ashore. Pack ship-day clothes Oct 18. Hyatt checkout 11:00."
+    ]
   },
   {
     id: "oct-20",
@@ -154,25 +163,25 @@ window.END_DAYS = [
     plan: [
       { time: "6:30a", title: "Dock Osanbashi", detail: "Yokohama International Passenger Terminal, 1-1-4 Kaigandori. Stay seated until your group is called. Bags in the terminal hall.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
       { time: "About 8:00\u20139:30", title: "Off the ship", detail: "Immigration and bag pickup in the terminal. Time depends on the call group.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
-      { time: "9:30\u201312:00", title: "Loose morning from the terminal", detail: "Only if you are off early. Bags with you. Stay on the Osanbashi block: rooftop, Yamashita Park 7 min, Red Brick 10 min, Chinatown 12 min, Motomachi 16 min. Pick one. These are the walks you did not get in Tokyo.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" },
+      { time: "9:30\u201312:00", title: "Loose morning from the terminal", detail: "Only if you are off early. Bags with you. Stay on the Osanbashi block: rooftop, Yamashita Park 7 min, Red Brick 10 min, Chinatown 12 min, Motomachi 16 min. Pick one.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" },
       { time: "By 12:00", title: "Leave for Haneda", detail: "Hard edge. Be inside the terminal by 1:25.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3" },
       { time: "1:25p", title: "At Haneda", detail: "Three hours before 4:25. Eat there if the morning was a miss.", link: "https://maps.google.com/?q=Haneda+Airport+food" },
       { time: "4:25p", title: "HND to ATL \u00b7 DL 294", detail: "Lands Atlanta 3:50p. Then ATL 7:05p to CLT 8:18p on DL 2813.", link: "https://maps.google.com/?q=Hartsfield-Jackson+Atlanta+Airport" }
     ],
     options: [
       { name: "Straight to Haneda", effort: "Safest", timeNeeded: "Leave as soon as bags are in hand", items: ["Best if deboard runs late or bags are heavy. Airport food is the lunch."] },
-      { name: "Stay in the terminal", effort: "Zero walk", timeNeeded: "20\u201340 min", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal", items: [{ name: "Osanbashi rooftop", note: "Wooden deck on top of the terminal. Harbor view, grass, five minutes upstairs. You did not get a waterfront walk in Tokyo.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+rooftop" }, { name: "Terminal 2F shops / cafe", note: "Yokohama souvenirs and a coffee without leaving the building.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal+shops" }] },
-      { name: "Yamashita Park + Red Brick \u2014 7 to 10 min", effort: "Closest walk", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama", items: [{ name: "Yamashita Park", note: "600 m, about 7 minutes out the terminal. Harbor promenade. Hikawa Maru is at the end if you want one photo.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" }, { name: "Red Brick Warehouse", note: "800 m, about 10 minutes. Shops open about 10:00. Crafts and a snack. The browse you did not do in Tokyo.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" }] },
-      { name: "Chinatown \u2014 12 min walk", effort: "Food you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Chinatown", items: [{ name: "Yokohama Chinatown", note: "1.0 km from Osanbashi. Largest Chinatown in Japan. Walk-and-eat only. Pork bun, fried wonton, egg tart. Do not sit for a long lunch.", link: "https://maps.google.com/?q=Yokohama+Chinatown" }, { name: "Kiyoken shumai", note: "Yokohama local box. Buy to go.", link: "https://maps.google.com/?q=Kiyoken+Yokohama+Chinatown" }] },
-      { name: "Motomachi \u2014 16 min walk", effort: "Shopping you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama", items: [{ name: "Motomachi-dori", note: "1.6 km from Osanbashi. Old foreign shopping street. Leather, antiques, boutiques, tea. The nicer shop street you did not get in Shinjuku.", link: "https://maps.google.com/?q=Motomachi-dori+Yokohama" }] }
+      { name: "Stay in the terminal", effort: "Zero walk", timeNeeded: "20\u201340 min", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal", items: [{ name: "Osanbashi rooftop", note: "Wooden deck on top of the terminal.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+rooftop" }, { name: "Terminal 2F shops / cafe", note: "Souvenirs and a coffee without leaving the building.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal+shops" }] },
+      { name: "Yamashita Park + Red Brick \u2014 7 to 10 min", effort: "Closest walk", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama", items: [{ name: "Yamashita Park", note: "600 m, about 7 minutes.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" }, { name: "Red Brick Warehouse", note: "800 m, about 10 minutes. Shops about 10:00.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" }] },
+      { name: "Chinatown \u2014 12 min walk", effort: "Food you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Chinatown", items: [{ name: "Yokohama Chinatown", note: "Walk-and-eat only. Pork bun, wonton, egg tart.", link: "https://maps.google.com/?q=Yokohama+Chinatown" }, { name: "Kiyoken shumai", note: "Yokohama local box. Buy to go.", link: "https://maps.google.com/?q=Kiyoken+Yokohama+Chinatown" }] },
+      { name: "Motomachi \u2014 16 min walk", effort: "Shopping you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama", items: [{ name: "Motomachi-dori", note: "1.6 km. Leather, antiques, boutiques, tea.", link: "https://maps.google.com/?q=Motomachi-dori+Yokohama" }] }
     ],
     food: [
       { name: "Ship breakfast", note: "Eat before your call group if breakfast is still open." },
       { name: "Osanbashi cafe", note: "If you never leave the terminal.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
-      { name: "Chinatown pork bun / wonton", note: "12-minute walk. The bite you did not get in Tokyo.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
-      { name: "Kiyoken shumai", note: "Yokohama don't-miss box. Take it with you.", link: "https://maps.google.com/?q=Kiyoken+shumai+Yokohama" },
+      { name: "Chinatown pork bun / wonton", note: "12-minute walk.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
+      { name: "Kiyoken shumai", note: "Yokohama don't-miss box.", link: "https://maps.google.com/?q=Kiyoken+shumai+Yokohama" },
       { name: "Red Brick snack or coffee", note: "10-minute walk. Shops about 10:00.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse+food" },
-      { name: "Haneda ramen or tonkatsu sando", note: "The reliable lunch if you skip the walk.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
+      { name: "Haneda ramen or tonkatsu sando", note: "If you skip the walk.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
     ],
     logistics: [
       "Osanbashi International Passenger Terminal. Dock 6:30a. Off ship about 8:00\u20139:30. Leave by 12:00.",
