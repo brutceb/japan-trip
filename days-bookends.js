@@ -146,37 +146,39 @@ window.END_DAYS = [
     date: "Oct 28",
     weekday: "Wed",
     kind: "Depart",
-    port: "Yokohama \u2014 HND 4:25p",
-    summary: "Dock 6:30a. Off ship 8:00\u20139:30. One loose zone near the pier if you are early. Leave by noon. Airport 1:25. HND 4:25p DL 294 to ATL, then DL 2813 to CLT.",
+    port: "Osanbashi \u2014 HND 4:25p",
+    summary: "Dock 6:30a at Osanbashi International Passenger Terminal. Off ship 8:00\u20139:30. One short walk from the terminal if you are early. Leave by noon. Airport 1:25. HND 4:25p DL 294 to ATL, then DL 2813 to CLT.",
     hours: "Dock 6:30 \u00b7 airport 1:25 \u00b7 HND 4:25p",
     stay: "In the air",
-    map: "https://maps.google.com/?q=Yokohama+cruise+terminal",
+    map: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal",
     plan: [
-      { time: "6:30a", title: "Ship docks Yokohama", detail: "Stay seated until your group is called. Bags in the terminal hall.", link: "https://maps.google.com/?q=Yokohama+Osanbashi+Pier" },
-      { time: "About 8:00\u20139:30", title: "Off the ship", detail: "Immigration and bag pickup. Time depends on the call group.", link: "https://maps.google.com/?q=Yokohama+cruise+terminal" },
-      { time: "9:30\u201312:00", title: "Loose morning \u2014 one zone only", detail: "Only if you are off early. Bags with you. High-ticket items you did not do in Tokyo: Motomachi shopping, Chinatown food, Red Brick crafts, Landmark Plaza character shop. Pick one cluster. Do not lock a plan.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" },
+      { time: "6:30a", title: "Dock Osanbashi", detail: "Yokohama International Passenger Terminal, 1-1-4 Kaigandori. Stay seated until your group is called. Bags in the terminal hall.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "About 8:00\u20139:30", title: "Off the ship", detail: "Immigration and bag pickup in the terminal. Time depends on the call group.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { time: "9:30\u201312:00", title: "Loose morning from the terminal", detail: "Only if you are off early. Bags with you. Stay on the Osanbashi block: rooftop, Yamashita Park 7 min, Red Brick 10 min, Chinatown 12 min, Motomachi 16 min. Pick one. These are the walks you did not get in Tokyo.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" },
       { time: "By 12:00", title: "Leave for Haneda", detail: "Hard edge. Be inside the terminal by 1:25.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3" },
       { time: "1:25p", title: "At Haneda", detail: "Three hours before 4:25. Eat there if the morning was a miss.", link: "https://maps.google.com/?q=Haneda+Airport+food" },
       { time: "4:25p", title: "HND to ATL \u00b7 DL 294", detail: "Lands Atlanta 3:50p. Then ATL 7:05p to CLT 8:18p on DL 2813.", link: "https://maps.google.com/?q=Hartsfield-Jackson+Atlanta+Airport" }
     ],
     options: [
       { name: "Straight to Haneda", effort: "Safest", timeNeeded: "Leave as soon as bags are in hand", items: ["Best if deboard runs late or bags are heavy. Airport food is the lunch."] },
-      { name: "Motomachi \u2014 the shopping you skipped", effort: "High-ticket street", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama", items: [{ name: "Motomachi-dori", note: "Yokohama old foreign shopping street. Leather, antiques, boutiques, tea. The nicer shop street you did not get in Shinjuku.", link: "https://maps.google.com/?q=Motomachi-dori+Yokohama" }, { name: "Bashamichi", note: "One street over. Craft and cafe stops if Motomachi is still opening.", link: "https://maps.google.com/?q=Bashamichi+Yokohama" }] },
-      { name: "Chinatown \u2014 the food you skipped", effort: "Walk from the pier", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Chinatown", items: [{ name: "Yokohama Chinatown", note: "Largest Chinatown in Japan. Walk-and-eat only. Pork bun, fried wonton, egg tart. Do not sit for a long lunch.", link: "https://maps.google.com/?q=Yokohama+Chinatown" }, { name: "Kiyoken shumai", note: "Yokohama local box. Buy to go if a stand is open.", link: "https://maps.google.com/?q=Kiyoken+Yokohama+Chinatown" }] },
-      { name: "Red Brick + Landmark \u2014 crafts and character", effort: "Closest to Osanbashi", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse", items: [{ name: "Red Brick Warehouse", note: "Shops open about 10:00. Crafts, souvenirs, a snack. Closest browse if you dock at Osanbashi.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" }, { name: "Pokemon Center Yokohama", note: "Landmark Plaza. The official character shop you did not lock in Tokyo.", link: "https://maps.google.com/?q=Pokemon+Center+Yokohama+Landmark+Plaza" }, { name: "Queen's Square / Landmark shops", note: "Indoor tax-free if you still need one last department-store pass.", link: "https://maps.google.com/?q=Queens+Square+Yokohama" }] }
+      { name: "Stay in the terminal", effort: "Zero walk", timeNeeded: "20\u201340 min", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal", items: [{ name: "Osanbashi rooftop", note: "Wooden deck on top of the terminal. Harbor view, grass, five minutes upstairs. You did not get a waterfront walk in Tokyo.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+rooftop" }, { name: "Terminal 2F shops / cafe", note: "Yokohama souvenirs and a coffee without leaving the building.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal+shops" }] },
+      { name: "Yamashita Park + Red Brick \u2014 7 to 10 min", effort: "Closest walk", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama", items: [{ name: "Yamashita Park", note: "600 m, about 7 minutes out the terminal. Harbor promenade. Hikawa Maru is at the end if you want one photo.", link: "https://maps.google.com/?q=Yamashita+Park+Yokohama" }, { name: "Red Brick Warehouse", note: "800 m, about 10 minutes. Shops open about 10:00. Crafts and a snack. The browse you did not do in Tokyo.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse" }] },
+      { name: "Chinatown \u2014 12 min walk", effort: "Food you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Yokohama+Chinatown", items: [{ name: "Yokohama Chinatown", note: "1.0 km from Osanbashi. Largest Chinatown in Japan. Walk-and-eat only. Pork bun, fried wonton, egg tart. Do not sit for a long lunch.", link: "https://maps.google.com/?q=Yokohama+Chinatown" }, { name: "Kiyoken shumai", note: "Yokohama local box. Buy to go.", link: "https://maps.google.com/?q=Kiyoken+Yokohama+Chinatown" }] },
+      { name: "Motomachi \u2014 16 min walk", effort: "Shopping you skipped", timeNeeded: "Until 12:00", link: "https://maps.google.com/?q=Motomachi+Shopping+Street+Yokohama", items: [{ name: "Motomachi-dori", note: "1.6 km from Osanbashi. Old foreign shopping street. Leather, antiques, boutiques, tea. The nicer shop street you did not get in Shinjuku.", link: "https://maps.google.com/?q=Motomachi-dori+Yokohama" }] }
     ],
     food: [
       { name: "Ship breakfast", note: "Eat before your call group if breakfast is still open." },
-      { name: "Chinatown pork bun / wonton", note: "The bite you did not get in Tokyo. Walk-and-eat.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
+      { name: "Osanbashi cafe", note: "If you never leave the terminal.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" },
+      { name: "Chinatown pork bun / wonton", note: "12-minute walk. The bite you did not get in Tokyo.", link: "https://maps.google.com/?q=Yokohama+Chinatown" },
       { name: "Kiyoken shumai", note: "Yokohama don't-miss box. Take it with you.", link: "https://maps.google.com/?q=Kiyoken+shumai+Yokohama" },
-      { name: "Red Brick snack or coffee", note: "Only after 10:00 when shops open.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse+food" },
-      { name: "Haneda ramen or tonkatsu sando", note: "The reliable lunch if you skip the port walk.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
+      { name: "Red Brick snack or coffee", note: "10-minute walk. Shops about 10:00.", link: "https://maps.google.com/?q=Yokohama+Red+Brick+Warehouse+food" },
+      { name: "Haneda ramen or tonkatsu sando", note: "The reliable lunch if you skip the walk.", link: "https://maps.google.com/?q=Haneda+Airport+ramen" }
     ],
     logistics: [
-      "Dock 6:30a. Off ship about 8:00\u20139:30. Leave Yokohama by 12:00.",
+      "Osanbashi International Passenger Terminal. Dock 6:30a. Off ship about 8:00\u20139:30. Leave by 12:00.",
       "Be at Haneda by 1:25. HND 4:25p DL 294 to ATL 3:50p. ATL 7:05p DL 2813 to CLT 8:18p.",
-      "Red Brick shops about 10:00. Chinatown food is the earlier option.",
-      "One zone only. Bags with you. Confirm the exact pier the night before."
+      "Walk times from the terminal door: rooftop upstairs, Yamashita Park 7 min, Red Brick 10 min, Chinatown 12 min, Motomachi 16 min.",
+      "One walk only. Bags with you. Confirm the pier the night before."
     ]
   }
 ];
