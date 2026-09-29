@@ -36,7 +36,7 @@ window.TRIP = {
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
     { when: "Oct 19", what: "Hyatt to Yokohama cruise terminal", detail: "Board mid-morning. Ship sails 3:00 PM. Confirm the pier." },
     { when: "Oct 25", what: "Private sedan from Aburatsu", detail: "Port pickup 8:30. Back about 1:45." },
-    { when: "Oct 28", what: "Dock 6:30 AM \u00b7 airport 1:25 \u00b7 flight 4:25", detail: "Friends fly Oct 29." }
+    { when: "Oct 28", what: "HND 4:25p DL 294 \u2192 ATL 3:50p \u00b7 ATL 7:05p DL 2813 \u2192 CLT 8:18p", detail: "Dock 6:30a. Off ship 8:00\u20139:30. Airport by 1:25." }
   ],
 
   notes: [
@@ -47,7 +47,7 @@ window.TRIP = {
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",
     "Tokushima is a Monday. Inotani is closed.",
     "Shimizu still needs a walking plan. Ship there 13:00\u201319:00.",
-    "You leave CLT Oct 14 at 9:35a on DL 1639, then DTW 1:45p on DL 275. Land Haneda Oct 15 at 4:15p. Out of the airport 5:15\u20135:45. Hotel about 6:30\u20137:45. Friends landed Narita Oct 7. You fly Oct 28 at 4:25. Friends fly Oct 29.",
+    "You leave CLT Oct 14 at 9:35a on DL 1639, then DTW 1:45p on DL 275. Land Haneda Oct 15 at 4:15p. You fly Oct 28: HND 4:25p DL 294 to ATL, then ATL 7:05p DL 2813 to CLT 8:18p. Be at Haneda by 1:25.",
     "Sea days: Oct 20 full sea, Oct 23 Kanmon Straits 8:00\u201310:00 on deck."
   ]
 };
