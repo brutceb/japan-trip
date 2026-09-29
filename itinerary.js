@@ -5,7 +5,7 @@ window.TRIP = {
   season: "October 2026",
   tagline: "Tap a day for the timed plan. Place names open Google Maps. Food lists the local don't-miss bites.",
   overview: [
-    { label: "You arrive", value: "Oct 15" },
+    { label: "You land", value: "Oct 15 \u00b7 4:15" },
     { label: "Tokyo days", value: "3" },
     { label: "Ship", value: "Oct 19\u201328" },
     { label: "You fly", value: "Oct 28 \u00b7 4:25" }
@@ -29,7 +29,8 @@ window.TRIP = {
   ],
 
   transport: [
-    { when: "Oct 15", what: "You arrive Tokyo", detail: "Check in at the Hyatt. Shopping and dinner at your discretion. Friday is 7:40." },
+    { when: "Oct 14", what: "CLT 9:35a DL 1639 \u2192 DTW 11:31a \u00b7 DTW 1:45p DL 275 \u2192 HND", detail: "Layover about 2h 14m. Lands Thursday 4:15p." },
+    { when: "Oct 15", what: "HND 4:15p \u2192 Hyatt", detail: "Out of airport 5:15\u20135:45. Train 40\u201355 min + 9-min walk, bus 50\u201370 min, or taxi ~30 min. Check in about 6:30\u20137:45." },
     { when: "Oct 16", what: "Yamanote + taxi/Ginza + Tobu Skytree Line", detail: "Shinjuku to Ueno Park Exit. Taxi or Ginza Line to RAGTIME at 10:00. One-stop Tobu to Skytree." },
     { when: "Oct 17", what: "JR + Tokyo Monorail + Yamanote", detail: "Shinjuku to Hamamatsucho to Oikeibajo-mae, then Harajuku Takeshita Exit." },
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
@@ -46,7 +47,7 @@ window.TRIP = {
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",
     "Tokushima is a Monday. Inotani is closed.",
     "Shimizu still needs a walking plan. Ship there 13:00\u201319:00.",
-    "You arrive Tokyo Oct 15. Friends landed Narita Oct 7. You fly Oct 28 at 4:25. Be at the airport by 1:25. Friends fly Oct 29.",
+    "You leave CLT Oct 14 at 9:35a on DL 1639, then DTW 1:45p on DL 275. Land Haneda Oct 15 at 4:15p. Out of the airport 5:15\u20135:45. Hotel about 6:30\u20137:45. Friends landed Narita Oct 7. You fly Oct 28 at 4:25. Friends fly Oct 29.",
     "Sea days: Oct 20 full sea, Oct 23 Kanmon Straits 8:00\u201310:00 on deck."
   ]
 };
