@@ -170,44 +170,65 @@
     dayList.querySelectorAll(".day").forEach((day) => setOpen(day, false));
   });
 
+  const openDay = (article) => {
+    if (!article) return;
+    setOpen(article, true);
+    article.scrollIntoView({ block: "start" });
+  };
+
   const hash = window.location.hash.slice(1);
   if (hash) {
     const match = document.getElementById(hash);
-    if (match && match.classList.contains("day")) {
-      setOpen(match, true);
-      match.scrollIntoView({ block: "start" });
-    }
+    if (match && match.classList.contains("day")) openDay(match);
   }
 
-  const lodging = document.getElementById("lodging");
-  (trip.lodging || []).forEach((item) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="day-date">${escapeHtml(item.city)}</div>
-      <h3>${linkedName(item.name, item.link || item.map)}</h3>
-      <p class="muted">${escapeHtml(item.nights)}</p>
-      <p class="muted">${escapeHtml(item.note)}</p>
-    `;
-    lodging.appendChild(card);
-  });
+  const tokyoNow = () => new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
+  const tokyoStamp = () => {
+    const now = tokyoNow();
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const hh = String(now.getHours()).padStart(2, "0");
+    const mm = String(now.getMinutes()).padStart(2, "0");
+    return {
+      label: months[now.getMonth()] + " " + now.getDate(),
+      clock: hh + ":" + mm,
+      weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][now.getDay()]
+    };
+  };
 
-  const transport = document.getElementById("transport");
-  (trip.transport || []).forEach((item) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="day-date">${escapeHtml(item.when)}</div>
-      <h3>${escapeHtml(item.what)}</h3>
-      <p class="muted">${escapeHtml(item.detail)}</p>
-    `;
-    transport.appendChild(card);
-  });
+  const markToday = () => {
+    const stamp = tokyoStamp();
+    const clock = document.getElementById("jp-clock");
+    const sub = document.getElementById("jp-clock-sub");
+    if (clock) clock.textContent = stamp.clock + "  Tokyo";
+    if (sub) sub.textContent = stamp.weekday + " " + stamp.label + " in Japan. Tap Today to open that day.";
+    (trip.days || []).forEach((day, index) => {
+      const el = document.getElementById(day.id || "day-" + (index + 1));
+      if (!el) return;
+      el.classList.toggle("is-today", (day.date || "") === stamp.label);
+    });
+  };
+  markToday();
+  setInterval(markToday, 30000);
 
-  const notes = document.getElementById("notes-list");
-  (trip.notes || []).forEach((note) => {
-    const li = document.createElement("li");
-    li.textContent = note;
-    notes.appendChild(li);
+  const jumpToday = document.getElementById("jump-today");
+  if (jumpToday) {
+    jumpToday.addEventListener("click", () => {
+      const today = document.querySelector(".day.is-today");
+      if (today) openDay(today);
+      else document.getElementById("days").scrollIntoView({ block: "start" });
+    });
+  }
+
+  document.querySelectorAll(".copy-btn").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const text = button.getAttribute("data-copy") || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = "Copy Japanese"; }, 1600);
+      } catch (err) {
+        button.textContent = "Select the Japanese line";
+      }
+    });
   });
 })();
