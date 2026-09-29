@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Japan pocket</title>
+  <meta name="description" content="Offline pocket page for the trip" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Japan pocket" />
+  <meta name="theme-color" content="#f4efe6" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <style>
+    :root {
+      --ink: #1c1a17; --ink-soft: #4a433c; --paper: #f4efe6; --paper-2: #ebe3d4; --card: #fbf7f0;
+      --line: #d7ccba; --indigo: #2b3a67; --vermillion: #c23b22; --gold: #b0893a; --green: #2f6b3a;
+      --shadow: 0 18px 40px rgba(28, 26, 23, 0.08);
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: "Avenir Next", "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --jp: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", "Hiragino Sans", serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); font-family: var(--sans); line-height: 1.5;
+      background: radial-gradient(1200px 500px at 80% -10%, rgba(226,183,176,0.28), transparent 55%), var(--paper);
+    }
+    a { color: var(--indigo); }
+    .wrap { width: min(860px, calc(100% - 28px)); margin: 0 auto; }
+    .nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: rgba(244,239,230,0.9); border-bottom: 1px solid var(--line); }
+    .nav-inner { display: flex; gap: 14px; align-items: center; justify-content: space-between; padding: 10px 0; }
+    .mark { text-decoration: none; color: inherit; display: flex; gap: 8px; align-items: baseline; }
+    .mark b { letter-spacing: 0.16em; text-transform: uppercase; font-size: 12px; }
+    .mark span { font-family: var(--serif); font-style: italic; color: var(--ink-soft); }
+    .nav-links { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+    .nav-links a { text-decoration: none; color: var(--ink-soft); }
+    section { margin: 28px 0 40px; }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 14px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
+    .section-head h2 { margin: 0; font-size: 28px; }
+    .section-head p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+    .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 12px; }
+    .card h3 { margin: 2px 0 6px; font-size: 22px; }
+    .kicker { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--vermillion); }
+    .muted { color: var(--ink-soft); font-size: 14px; margin: 4px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+    .clock { font-family: var(--serif); font-size: clamp(56px, 16vw, 96px); line-height: 1; margin: 6px 0; }
+    .blocks { list-style: none; margin: 0; padding: 0; }
+    .blocks li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 10px 0; border-top: 1px dashed var(--line); }
+    .blocks li:first-child { border-top: 0; }
+    .blocks .time { font-weight: 600; color: var(--indigo); font-variant-numeric: tabular-nums; }
+    .blocks .what { font-weight: 600; }
+    .tag { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--line); padding: 1px 7px; margin-left: 6px; }
+    .tag.ok { color: var(--green); border-color: #b7d0bb; }
+    .tag.hold { color: var(--gold); border-color: #dcc79b; }
+    .tag.open { color: var(--vermillion); border-color: #e3b1a6; }
+    .day-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .day-tabs button, .text-btn { font: inherit; font-size: 13px; background: transparent; border: 1px solid var(--line); padding: 5px 10px; cursor: pointer; color: var(--ink-soft); }
+    .day-tabs button.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 7px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+    .taxi { border-left: 4px solid var(--vermillion); }
+    .taxi .jp { font-family: var(--jp); font-size: clamp(24px, 6.4vw, 34px); line-height: 1.35; margin: 8px 0; word-break: keep-all; overflow-wrap: anywhere; }
+    .taxi.big .jp { font-size: clamp(30px, 9vw, 48px); }
+    .phrase .jp { font-family: var(--jp); font-size: clamp(22px, 5.8vw, 30px); margin: 6px 0; }
+    .ref { font-variant-numeric: tabular-nums; font-family: ui-monospace, Menlo, monospace; }
+    .local input { font: inherit; width: 100%; padding: 6px 8px; border: 1px solid var(--line); background: #fff; margin: 3px 0 8px; }
+    .local label { font-size: 13px; color: var(--ink-soft); }
+    .note { font-size: 13px; color: var(--ink-soft); }
+    .offline { font-size: 12px; color: var(--ink-soft); }
+    footer { padding: 20px 0 40px; color: var(--ink-soft); font-size: 13px; border-top: 1px solid var(--line); }
+    @media (max-width: 520px) { .blocks li { grid-template-columns: 78px 1fr; } }
+    @media print { .nav, .local, .day-tabs, .text-btn { display: none; } .card { box-shadow: none; break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="mark" href="index.html"><b>Pocket</b><span>Japan</span></a>
+      <nav class="nav-links">
+        <a href="#today">Today</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#taxi">Taxi</a>
+        <a href="#hotel">Hotel</a>
+        <a href="#ship">Ship</a>
+        <a href="#flights">Flights</a>
+        <a href="#sos">Help</a>
+        <a href="#phrases">Phrases</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="now">
+      <div class="card">
+        <div class="kicker">Japan time right now</div>
+        <div class="clock" id="clock">--:--</div>
+        <p class="muted" id="clock-sub">Tokyo time even if the phone is still on Eastern.</p>
+        <p class="offline" id="offline-status">Open once on Wi-Fi, then Add to Home Screen. It then works with no signal.</p>
+      </div>
+    </section>
+
+    <section id="today">
+      <div class="section-head"><h2>Today</h2><p id="today-label">Timed items, Japan time</p></div>
+      <div class="day-tabs" id="day-tabs"></div>
+      <div class="card"><ul class="blocks" id="today-list"></ul></div>
+    </section>
+
+    <section id="bookings">
+      <div class="section-head"><h2>Bookings</h2><p>Refs are last 4 only. Full refs live in the booking emails.</p></div>
+      <div id="booking-list"></div>
+      <details class="card local">
+        <summary>Full refs on this phone only</summary>
+        <p class="note">Typed here, saved only in this browser (localStorage). Never uploaded, never in the public repo.</p>
+        <div id="local-fields"></div>
+        <button type="button" class="text-btn" id="local-clear">Clear saved refs</button>
+      </details>
+    </section>
+
+    <section id="taxi">
+      <div class="section-head"><h2>Taxi cards</h2><p>Show the Japanese line to the driver.</p></div>
+      <div id="taxi-list"></div>
+    </section>
+
+    <section id="hotel">
+      <div class="section-head"><h2>Hotel</h2><p>Hyatt Regency Tokyo</p></div>
+      <div class="card">
+        <div class="kicker">Oct 15 &ndash; Oct 19</div>
+        <h3>Hyatt Regency Tokyo</h3>
+        <p class="muted">2-7-2 Nishi-Shinjuku. Tochomae Exit A7 about 1 minute, Shinjuku West Exit about 9 minutes.</p>
+        <table>
+          <tr><th>Booking</th><th>Nights</th><th>Room</th></tr>
+          <tr><td class="ref">&hellip;5822</td><td>Oct 15 &ndash; 18 (3 nights)</td><td>1 King, Club Access</td></tr>
+          <tr><td class="ref">&hellip;0069</td><td>Oct 18 &ndash; 19 (1 night)</td><td>1 King, Club Access</td></tr>
+        </table>
+        <ul>
+          <li><b>Two separate bookings.</b> Possible room change on the morning of <b>Oct 18</b>. Ask at the desk on arrival to keep the same room.</li>
+          <li>Check-in from 2:00 PM. <b>Checkout Oct 19, 11:00 AM.</b> Leave for Osanbashi by 11:15.</li>
+          <li>Pack ship-day bags the night of Oct 18.</li>
+        </ul>
+        <p><a href="tel:+81333481234">Call hotel +81 3 3348 1234</a> &middot; Reservations +81 3 5321 8181 (8:00&ndash;20:00 Japan time)</p>
+      </div>
+    </section>
+
+    <section id="ship">
+      <div class="section-head"><h2>Ship</h2><p>Diamond Princess &middot; cabin TBD</p></div>
+      <div class="card">
+        <div class="kicker">Mon Oct 19 &middot; embark</div>
+        <h3>Osanbashi Yokohama International Passenger Terminal</h3>
+        <p class="muted">1-1-4 Kaigandori, Naka-ku, Yokohama. Confirm the pier in the Princess app the night of Oct 18.</p>
+        <table>
+          <tr><th>Time</th><th>What</th></tr>
+          <tr><td>11:15</td><td>Leave the Hyatt (taxi 40&ndash;60 min, or JR to Sakuragicho / Minatomirai Line to Nihon-odori + 7&ndash;10 min walk)</td></tr>
+          <tr><td>12:00&ndash;14:00</td><td>Check-in window. Aim to be at the door by 13:00.</td></tr>
+          <tr><td><b>14:00</b></td><td><b>All aboard / check-in cutoff.</b> Later can be refused.</td></tr>
+          <tr><td>15:00</td><td>Sail</td></tr>
+        </table>
+        <p class="muted">Cabin: <b>TBD</b> &middot; Princess booking: in the Princess app.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Port hours (ship times, local)</div>
+        <table>
+          <tr><th>Date</th><th>Port</th><th>Ship</th><th>Note</th></tr>
+          <tr><td>Tue Oct 20</td><td>At sea</td><td>&mdash;</td><td></td></tr>
+          <tr><td>Wed Oct 21</td><td>Nagasaki</td><td>10:00&ndash;19:00</td><td>All-aboard: check app</td></tr>
+          <tr><td>Thu Oct 22</td><td>Busan</td><td>7:00&ndash;16:00</td><td>Meet Suni 8:00. Back at terminal by 15:00</td></tr>
+          <tr><td>Fri Oct 23</td><td>Kanmon Straits</td><td>8:00&ndash;10:00</td><td>Scenic cruising, no port</td></tr>
+          <tr><td>Sat Oct 24</td><td>Hiroshima</td><td>7:00&ndash;17:00</td><td>All-aboard: check app</td></tr>
+          <tr><td>Sun Oct 25</td><td>Aburatsu / Nichinan</td><td>8:00&ndash;17:00</td><td>Sedan pickup 8:30, back about 13:45</td></tr>
+          <tr><td>Mon Oct 26</td><td>Tokushima</td><td>9:00&ndash;18:00</td><td>Taxi to pier 16:30</td></tr>
+          <tr><td>Tue Oct 27</td><td>Shimizu</td><td>13:00&ndash;19:00</td><td>Plan TBD</td></tr>
+          <tr><td>Wed Oct 28</td><td>Yokohama (Osanbashi)</td><td>Dock 6:30</td><td>Off 8:00&ndash;9:30. Leave by 12:00. Haneda by 13:25</td></tr>
+        </table>
+        <p class="note">Korea is on the same clock as Japan. All-aboard is usually 30&ndash;60 minutes before sailing; the daily Princess Patter has the real time.</p>
+      </div>
+    </section>
+
+    <section id="flights">
+      <div class="section-head"><h2>Flights</h2><p>Local times</p></div>
+      <div class="card">
+        <table>
+          <tr><th>Date</th><th>Flight</th><th>From</th><th>To</th></tr>
+          <tr><td>Wed Oct 14</td><td>DL 1639</td><td>CLT 9:35 AM</td><td>DTW 11:31 AM</td></tr>
+          <tr><td>Wed Oct 14</td><td>DL 275</td><td>DTW 1:45 PM</td><td>HND Thu Oct 15 4:15 PM (Japan)</td></tr>
+          <tr><td>Wed Oct 28</td><td>DL 294</td><td>HND 4:25 PM (Japan)</td><td>ATL 3:50 PM same day</td></tr>
+          <tr><td>Wed Oct 28</td><td>DL 2813</td><td>ATL 7:05 PM</td><td>CLT 8:18 PM</td></tr>
+        </table>
+        <p class="note">Oct 28: be inside Haneda Terminal 3 by 1:25 PM.</p>
+      </div>
+    </section>
+
+    <section id="sos">
+      <div class="section-head"><h2>If something breaks</h2><p>Tap to call</p></div>
+      <div class="grid">
+        <div class="card"><div class="kicker">Emergency</div><h3><a href="tel:110">Police 110</a></h3><h3><a href="tel:119">Ambulance / fire 119</a></h3><p class="muted">Say &ldquo;Eigo onegai shimasu&rdquo; for English.</p></div>
+        <div class="card"><div class="kicker">US Embassy Tokyo</div><h3><a href="tel:+81332245000">+81-3-3224-5000</a></h3><p class="muted">Lost passport, arrest, serious trouble. 24 hours.</p></div>
+        <div class="card"><div class="kicker">JNTO Japan Visitor Hotline</div><h3><a href="tel:+815038162787">050-3816-2787</a></h3><p class="muted">24 hours, English. Tourist help, illness, disasters.</p></div>
+        <div class="card"><div class="kicker">Hotel</div><h3><a href="tel:+81333481234">Hyatt +81 3 3348 1234</a></h3><p class="muted">Concierge can call a shop or restaurant in Japanese for you.</p></div>
+        <div class="card"><div class="kicker">Insurance</div><h3>Travel insurance</h3><p class="muted">Company: ____ &middot; Policy: see local refs &middot; Claims phone: ____</p></div>
+        <div class="card"><div class="kicker">Lost card</div><h3>Card-loss numbers</h3><p class="muted">Amex: number on the back of the card / app &middot; Other card: ____</p></div>
+      </div>
+    </section>
+
+    <section id="phrases">
+      <div class="section-head"><h2>Phrase cards</h2><p>Point at the Japanese</p></div>
+      <div class="grid" id="phrase-list"></div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Pocket page &middot; <a href="index.html">full itinerary</a> &middot; works offline after one load on this phone</div></footer>
+
+  <script>
+  (function () {
+    var esc = function (v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+
+    /* ---------- Timed items by date (Japan time) ---------- */
+    var DAYS = {
+      "2026-10-15": { label: "Thu Oct 15 \u00b7 Arrive", items: [
+        ["4:15 PM", "Land Haneda T3 (DL 275)", "Immigration + bags 45\u201375 min.", "ok"],
+        ["5:30\u20137:15", "Airport to Hyatt", "Train 40\u201355 min + walk, limousine bus 50\u201370 min, taxi about 30 min.", ""],
+        ["6:30\u20137:45", "Check in, Hyatt Regency Tokyo", "Booking \u20265822.", "ok"],
+        ["7:45+", "Easy night near the hotel", "Omoide Yokocho, Odakyu basement, or stay in.", ""]
+      ]},
+      "2026-10-16": { label: "Fri Oct 16 \u00b7 East Tokyo", items: [
+        ["7:40", "Leave the Hyatt", "Yamanote to Ueno, Park Exit.", ""],
+        ["8:30\u20139:50", "Shinobazu Pond, then Ameyoko", "Street-food graze.", ""],
+        ["10:00\u201311:30", "RAGTIME Coin Factory", "1-16-1 Kotobuki 1F. Booking in progress (3 online + 1 by email). Taxi or Ginza Line, do not walk.", "hold"],
+        ["11:45\u201312:40", "Kama-Asa, Kappabashi", "2-24-1 Matsugaya.", ""],
+        ["12:40\u20132:40", "Asakusa lunch, Nakamise, kimono shops", "", ""],
+        ["3:00\u20134:00", "Chopstick Making Tokyo", "Booked for 4. Relink Kaminarimon 8F, 2-17-9 Kaminarimon. Arrive 2:50.", "ok"],
+        ["4:15\u20135:20", "Solamachi", "Tobu Skytree Line one stop.", ""],
+        ["5:30\u20137:15", "Tokyo Skytree", "Booked. Entry window 17:30\u201317:59. Deck + Galleria.", "ok"],
+        ["7:30\u20138:20", "Senso-ji illuminated", "", ""],
+        ["8:30+", "Asakusa dinner, pick one", "", ""]
+      ]},
+      "2026-10-17": { label: "Sat Oct 17 \u00b7 Oi / Harajuku / Samurai", items: [
+        ["7:00\u20137:35", "Breakfast", "Shinpachi Shokudo or BERG.", ""],
+        ["9:00\u201311:15", "Oi flea market", "Confirm on trx.jp. Cash.", ""],
+        ["12:00\u20131:00", "Harajuku lunch", "", ""],
+        ["1:15\u20132:00", "Meiji Jingu", "", ""],
+        ["2:20\u20133:25", "Shinjuku Gyoen", "", ""],
+        ["4:00", "Samurai Restaurant: ARRIVE", "1-7-7 Kabukicho. 20 min early or lose the slot. Bring ID.", "ok"],
+        ["4:20\u20135:50", "Samurai show", "Booked, 4 adults, 2 drinks each.", "ok"],
+        ["7:30+", "Golden Gai, Omoide Yokocho", "", ""]
+      ]},
+      "2026-10-18": { label: "Sun Oct 18 \u00b7 Shinjuku / Shibuya", items: [
+        ["8:15", "Leave the Hyatt", "Possible room change today (second booking \u20260069).", ""],
+        ["9:20\u201310:35", "Godzilla Head, purikura", "", ""],
+        ["11:00\u201312:00", "Ramen class, Shinjuku Ale", "Booked. 1-14-5 Kabukicho, Marui Bldg 2F, no elevator. Bring ID.", "ok"],
+        ["12:05\u20132:10", "Don Quijote, Onitsuka Tiger, Bic Camera", "", ""],
+        ["2:40\u20134:15", "Shibuya loop", "", ""],
+        ["4:20\u20135:40", "Shibuya Sky", "Target 16:20, backup 16:40. Check it is booked.", "open"],
+        ["6:00+", "Dinner, pick one", "", ""],
+        ["Tonight", "Pack ship-day bags. Confirm the pier in the Princess app.", "", ""]
+      ]},
+      "2026-10-19": { label: "Mon Oct 19 \u00b7 Embark", items: [
+        ["11:00", "Hyatt checkout", "", ""],
+        ["11:15", "Leave for Osanbashi", "Taxi 40\u201360 min.", ""],
+        ["12:00\u201314:00", "Check-in window, Osanbashi", "Aim for 13:00.", ""],
+        ["14:00", "ALL ABOARD / cutoff", "", "open"],
+        ["15:00", "Sail", "", ""]
+      ]},
+      "2026-10-20": { label: "Tue Oct 20 \u00b7 At sea", items: [["All day", "At sea", "Nagasaki tomorrow 10:00.", ""]] },
+      "2026-10-21": { label: "Wed Oct 21 \u00b7 Nagasaki", items: [["10:00\u201319:00", "Ship in Nagasaki", "Peace Park, Chinatown, Dejima, Glover Garden. Check all-aboard in the app.", ""]] },
+      "2026-10-22": { label: "Thu Oct 22 \u00b7 Busan", items: [["7:00\u201316:00", "Ship in Busan", "", ""], ["8:00", "Meet Suni at the cruise terminal", "", ""], ["15:00", "Back at the terminal", "", "open"]] },
+      "2026-10-23": { label: "Fri Oct 23 \u00b7 Kanmon Straits", items: [["8:00\u201310:00", "Kanmon Straits on deck", "Not a port.", ""]] },
+      "2026-10-24": { label: "Sat Oct 24 \u00b7 Hiroshima", items: [["7:00\u201317:00", "Ship in Hiroshima", "Dome by 8:00, museum, okonomiyaki.", ""]] },
+      "2026-10-25": { label: "Sun Oct 25 \u00b7 Aburatsu", items: [["8:00\u201317:00", "Ship in Aburatsu", "", ""], ["8:30", "Private sedan pickup at the port", "Udo Jingu, Namikiri, Obi. Back about 1:45.", "ok"]] },
+      "2026-10-26": { label: "Mon Oct 26 \u00b7 Tokushima", items: [["9:00\u201318:00", "Ship in Tokushima", "", ""], ["11:00", "Awa Jurobe Yashiki puppet show", "", ""], ["2:00", "Awa Odori Kaikan dance", "", ""], ["4:30", "Taxi to the pier", "", ""]] },
+      "2026-10-27": { label: "Tue Oct 27 \u00b7 Shimizu", items: [["13:00\u201319:00", "Ship in Shimizu", "Plan TBD.", ""]] },
+      "2026-10-28": { label: "Wed Oct 28 \u00b7 Fly home", items: [
+        ["6:30", "Dock Osanbashi", "", ""], ["8:00\u20139:30", "Off the ship", "", ""],
+        ["By 12:00", "Leave for Haneda", "", "open"], ["1:25 PM", "Inside Haneda T3", "", ""],
+        ["4:25 PM", "DL 294 to ATL", "Then DL 2813 ATL 7:05 PM to CLT 8:18 PM.", "ok"]
+      ]}
+    };
+    var ORDER = Object.keys(DAYS).sort();
+
+    var tokyoParts = function () {
+      var f = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", weekday: "short", hour12: false });
+      var o = {}; f.formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+      return { date: o.year + "-" + o.month + "-" + o.day, clock: (o.hour === "24" ? "00" : o.hour) + ":" + o.minute, weekday: o.weekday };
+    };
+
+    var tagHtml = { ok: '<span class="tag ok">Booked</span>', hold: '<span class="tag hold">In progress</span>', open: '<span class="tag open">Watch</span>' };
+    var selected = null;
+    var renderDay = function (key) {
+      selected = key;
+      var d = DAYS[key];
+      document.getElementById("today-label").textContent = d.label + " \u00b7 Japan time";
+      document.getElementById("today-list").innerHTML = d.items.map(function (it) {
+        return '<li><div class="time">' + esc(it[0]) + '</div><div><div class="what">' + esc(it[1]) + (tagHtml[it[3]] || "") + '</div>' + (it[2] ? '<div class="note">' + esc(it[2]) + '</div>' : "") + '</div></li>';
+      }).join("");
+      Array.prototype.forEach.call(document.querySelectorAll("#day-tabs button"), function (b) { b.classList.toggle("active", b.getAttribute("data-day") === key); });
+    };
+    document.getElementById("day-tabs").innerHTML = ORDER.map(function (k) {
+      return '<button type="button" data-day="' + k + '">Oct ' + Number(k.slice(8)) + '</button>';
+    }).join("");
+    document.getElementById("day-tabs").addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (b) renderDay(b.getAttribute("data-day"));
+    });
+
+    var tick = function () {
+      var t = tokyoParts();
+      document.getElementById("clock").textContent = t.clock;
+      var sub = t.weekday + " " + t.date + " in Japan.";
+      if (t.date < ORDER[0]) {
+        var days = Math.round((Date.parse(ORDER[0]) - Date.parse(t.date)) / 86400000);
+        sub += " Landing in " + days + " day" + (days === 1 ? "" : "s") + ".";
+      }
+      document.getElementById("clock-sub").textContent = sub;
+      if (selected === null) {
+        var pick = DAYS[t.date] ? t.date : (t.date < ORDER[0] ? ORDER[0] : ORDER[ORDER.length - 1]);
+        renderDay(pick);
+      }
+    };
+    tick(); setInterval(tick, 30000);
+
+    /* ---------- Bookings ---------- */
+    var BOOKINGS = [
+      { id: "chop", when: "Fri Oct 16 \u00b7 3:00\u20134:00 PM", name: "Chopstick Making Tokyo", status: "ok", ref: "\u20269799", arrive: "2:50 PM, Relink Kaminarimon 8F", cancel: "See voucher (Bokun / Food Activity Japan)", paid: "\u00a56,000 for 4, paid", phone: "info@world-company.jp (provider email)" },
+      { id: "sky", when: "Fri Oct 16 \u00b7 entry 5:30\u20135:59 PM", name: "Tokyo Skytree, Deck + Galleria", status: "ok", ref: "\u2026FF7T", arrive: "5:20 PM, 4F entrance", cancel: "Paid at booking", paid: "\u00a515,200, paid Sep 27", phone: "Tokyo Skytree call center 0570-55-0634" },
+      { id: "samurai", when: "Sat Oct 17 \u00b7 show 4:20\u2013~5:50 PM", name: "Samurai Restaurant show, 2 drinks", status: "ok", ref: "\u2026ANXN", arrive: "4:00 PM sharp (20 min early)", cancel: "Free until Oct 16 4:20 PM Japan time", paid: "$250.40 charged Oct 14", phone: "+81 3 3200 5500" },
+      { id: "ramen", when: "Sun Oct 18 \u00b7 11:00 AM\u201312:00", name: "Ramen class, Shinjuku Ale", status: "ok", ref: "\u2026VFZH", arrive: "10:55 AM, 2F (stairs only). Bring ID", cancel: "Free until Oct 17 11:00 AM Japan time", paid: "$114.36 charged Oct 15", phone: "Halue +81 3 6205 5970" },
+      { id: "ragtime", when: "Fri Oct 16 \u00b7 10:00\u201311:30 AM", name: "RAGTIME Coin Factory", status: "hold", ref: "pending", arrive: "9:55 AM", cancel: "Free change or cancel until Oct 15. Same day = 100%", paid: "Pay at shop, cash or card, from \u00a56,500 pp", phone: "03-6231-7723" },
+      { id: "shibuya", when: "Sun Oct 18 \u00b7 target 4:20 PM (backup 4:40)", name: "Shibuya Sky", status: "open", ref: "not booked", arrive: "10 min before slot. No bags or hats on the roof", cancel: "Free until the day before", paid: "Sale opens Oct 4 00:00 Japan time = Oct 3 11:00 AM Eastern", phone: "03-4221-0229" },
+      { id: "hyatt1", when: "Oct 15\u201318", name: "Hyatt Regency Tokyo, booking 1", status: "ok", ref: "\u20265822", arrive: "Check-in from 2:00 PM", cancel: "By Oct 14 11:59 PM Japan time", paid: "Points", phone: "+81 3 3348 1234" },
+      { id: "hyatt2", when: "Oct 18\u201319", name: "Hyatt Regency Tokyo, booking 2", status: "ok", ref: "\u20260069", arrive: "Checkout Oct 19 11:00 AM", cancel: "By Oct 17 11:59 PM Japan time", paid: "Points", phone: "+81 3 3348 1234" }
+    ];
+    var LS = "japanTripLocalRefs";
+    var local = {};
+    try { local = JSON.parse(localStorage.getItem(LS) || "{}"); } catch (e) { local = {}; }
+    var telLink = function (p) {
+      if (!/^[+0-9][0-9 \-]+$/.test(p.replace(/^.*?([+0][0-9 \-]{8,})$/, "$1"))) return esc(p);
+      var num = p.replace(/^.*?([+0][0-9 \-]{8,})$/, "$1");
+      var dial = num.charAt(0) === "+" ? num.replace(/[^0-9+]/g, "") : "+81" + num.replace(/[^0-9]/g, "").slice(1);
+      return esc(p.slice(0, p.length - num.length)) + '<a href="tel:' + dial + '">' + esc(num) + "</a>";
+    };
+    var renderBookings = function () {
+      document.getElementById("booking-list").innerHTML = BOOKINGS.map(function (b) {
+        var full = local[b.id] ? ' <span class="note">(full: <span class="ref">' + esc(local[b.id]) + "</span>)</span>" : "";
+        return '<article class="card"><div class="kicker">' + esc(b.when) + "</div><h3>" + esc(b.name) + (tagHtml[b.status] || "") + "</h3>" +
+          "<table>" +
+          "<tr><th>Ref</th><td class=\"ref\">" + esc(b.ref) + full + "</td></tr>" +
+          "<tr><th>Arrive by</th><td>" + esc(b.arrive) + "</td></tr>" +
+          "<tr><th>Cancel</th><td>" + esc(b.cancel) + "</td></tr>" +
+          "<tr><th>Money</th><td>" + esc(b.paid) + "</td></tr>" +
+          "<tr><th>Provider</th><td>" + telLink(b.phone) + "</td></tr>" +
+          "</table></article>";
+      }).join("");
+    };
+    document.getElementById("local-fields").innerHTML = BOOKINGS.map(function (b) {
+      return '<label for="lf-' + b.id + '">' + esc(b.name) + '</label><input id="lf-' + b.id + '" data-id="' + b.id + '" autocomplete="off" spellcheck="false" value="' + esc(local[b.id] || "") + '" />';
+    }).join("") + '<label for="lf-other">Other (cruise, insurance policy, cabin)</label><input id="lf-other" data-id="other" autocomplete="off" value="' + esc(local.other || "") + '" />';
+    document.getElementById("local-fields").addEventListener("input", function (e) {
+      var id = e.target.getAttribute("data-id"); if (!id) return;
+      if (e.target.value.trim()) local[id] = e.target.value.trim(); else delete local[id];
+      try { localStorage.setItem(LS, JSON.stringify(local)); } catch (err) {}
+      renderBookings();
+    });
+    document.getElementById("local-clear").addEventListener("click", function () {
+      local = {}; try { localStorage.removeItem(LS); } catch (e) {}
+      Array.prototype.forEach.call(document.querySelectorAll("#local-fields input"), function (i) { i.value = ""; });
+      renderBookings();
+    });
+    renderBookings();
+
+    /* ---------- Taxi cards ---------- */
+    var TAXI = [
+      ["Hotel", "Hyatt Regency Tokyo", "\u6771\u4eac\u90fd\u65b0\u5bbf\u533a\u897f\u65b0\u5bbf2-7-2 \u30cf\u30a4\u30a2\u30c3\u30c8 \u30ea\u30fc\u30b8\u30a7\u30f3\u30b7\u30fc\u6771\u4eac", "2-7-2 Nishi-Shinjuku", true],
+      ["Oct 16 10:00", "RAGTIME Coin Factory", "\u6771\u4eac\u90fd\u53f0\u6771\u533a\u5bff1-16-1 1F \u30e9\u30b0\u30bf\u30a4\u30e0 \u30b3\u30a4\u30f3\u30d5\u30a1\u30af\u30c8\u30ea\u30fc", "1-16-1 Kotobuki, Taito. Near Tawaramachi Station"],
+      ["Oct 16", "Kama-Asa (Kappabashi)", "\u6771\u4eac\u90fd\u53f0\u6771\u533a\u677e\u304c\u8c372-24-1 \u91dc\u6d45\u5546\u5e97", "2-24-1 Matsugaya, Taito"],
+      ["Oct 16 15:00", "Chopstick Making Tokyo", "\u6771\u4eac\u90fd\u53f0\u6771\u533a\u96f7\u95802-17-9 Relink KAMINARIMON 8\u968e", "2-17-9 Kaminarimon, Taito. Glass door next to the ramen shop"],
+      ["Oct 16 17:30", "Tokyo Skytree", "\u6771\u4eac\u90fd\u58a8\u7530\u533a\u62bc\u4e0a1-1-2 \u6771\u4eac\u30b9\u30ab\u30a4\u30c4\u30ea\u30fc", "1-1-2 Oshiage, Sumida"],
+      ["Oct 16 night", "Senso-ji", "\u6771\u4eac\u90fd\u53f0\u6771\u533a\u6d45\u83492-3-1 \u6d45\u8349\u5bfa \u96f7\u9580", "2-3-1 Asakusa, Taito"],
+      ["Oct 17 9:00", "Oi Racecourse flea market", "\u6771\u4eac\u90fd\u54c1\u5ddd\u533a\u52dd\u5cf62-1-2 \u5927\u4e95\u7af6\u99ac\u5834", "2-1-2 Katsushima, Shinagawa"],
+      ["Oct 17", "Shinjuku Gyoen", "\u6771\u4eac\u90fd\u65b0\u5bbf\u533a\u5185\u85e4\u753a11 \u65b0\u5bbf\u5fa1\u82d1", "11 Naito-machi, Shinjuku"],
+      ["Oct 17 16:00", "Samurai Restaurant", "\u6771\u4eac\u90fd\u65b0\u5bbf\u533a\u6b4c\u821e\u4f0e\u753a1-7-7 \u30b5\u30e0\u30e9\u30a4\u30ec\u30b9\u30c8\u30e9\u30f3", "1-7-7 Kabukicho, Shinjuku"],
+      ["Oct 18 11:00", "Ramen class, Shinjuku Ale", "\u6771\u4eac\u90fd\u65b0\u5bbf\u533a\u6b4c\u821e\u4f0e\u753a1-14-5 \u30de\u30eb\u30a4\u30d3\u30eb2\u968e", "1-14-5 Kabukicho, Marui Bldg 2F"],
+      ["Oct 18 16:20", "Shibuya Sky", "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c372-24-12 \u6e0b\u8c37\u30b9\u30af\u30e9\u30f3\u30d6\u30eb\u30b9\u30af\u30a8\u30a2", "2-24-12 Shibuya. Shibuya Scramble Square"],
+      ["Oct 19 / Oct 28", "Osanbashi cruise terminal", "\u6a2a\u6d5c\u5e02\u4e2d\u533a\u6d77\u5cb8\u901a1-1-4 \u5927\u3055\u3093\u6a4b\u56fd\u969b\u5ba2\u8239\u30bf\u30fc\u30df\u30ca\u30eb", "1-1-4 Kaigandori, Naka-ku, Yokohama", true],
+      ["Oct 28", "Haneda Airport Terminal 3", "\u7fbd\u7530\u7a7a\u6e2f \u7b2c3\u30bf\u30fc\u30df\u30ca\u30eb\uff08\u56fd\u969b\u7dda\uff09", "Haneda T3, international", true]
+    ];
+    document.getElementById("taxi-list").innerHTML = TAXI.map(function (t) {
+      return '<article class="card taxi' + (t[4] ? " big" : "") + '"><div class="kicker">' + esc(t[0]) + "</div><h3>" + esc(t[1]) + '</h3><p class="jp" lang="ja">' + esc(t[2]) + '</p><p class="muted">' + esc(t[3]) + '</p><p class="note" lang="ja">\u3053\u3053\u307e\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002 (Here, please.)</p></article>';
+    }).join("");
+
+    /* ---------- Phrases ---------- */
+    var PHRASES = [
+      ["Please take me here.", "\u3053\u3053\u307e\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002", "Koko made onegai shimasu."],
+      ["We have a reservation for 4.", "4\u540d\u3067\u4e88\u7d04\u3057\u3066\u3044\u307e\u3059\u3002", "Yon-mei de yoyaku shite imasu."],
+      ["Card OK?", "\u30ab\u30fc\u30c9\u3067\u6255\u3048\u307e\u3059\u304b\uff1f", "Kaado de haraemasu ka?"],
+      ["Where is the toilet?", "\u30c8\u30a4\u30ec\u306f\u3069\u3053\u3067\u3059\u304b\uff1f", "Toire wa doko desu ka?"],
+      ["I have a food allergy: ____", "\u79c1\u306f____\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002", "Watashi wa ____ no arerugii ga arimasu."],
+      ["Please call a taxi.", "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002", "Takushii o yonde kudasai."],
+      ["Tax-free, please.", "\u514d\u7a0e\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002", "Menzei de onegai shimasu."],
+      ["Please help. Call an ambulance.", "\u52a9\u3051\u3066\u304f\u3060\u3055\u3044\u3002\u6551\u6025\u8eca\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002", "Tasukete kudasai. Kyuukyuusha o yonde kudasai."]
+    ];
+    document.getElementById("phrase-list").innerHTML = PHRASES.map(function (p) {
+      return '<article class="card phrase"><div class="kicker">' + esc(p[0]) + '</div><p class="jp" lang="ja">' + esc(p[1]) + '</p><p class="muted">' + esc(p[2]) + "</p></article>";
+    }).join("");
+
+    /* ---------- Offline ---------- */
+    var status = document.getElementById("offline-status");
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").then(function () {
+        return navigator.serviceWorker.ready;
+      }).then(function () {
+        status.textContent = "Saved for offline on this phone. Add to Home Screen so it stays saved.";
+      }).catch(function () {});
+    } else {
+      status.textContent = "This browser cannot save offline. Take a screenshot or print to PDF.";
+    }
+  })();
+  </script>
+</body>
+</html>

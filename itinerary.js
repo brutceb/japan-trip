@@ -1,14 +1,14 @@
 window.TRIP = {
   title: "Japan",
   subtitle: "Days & ports",
-  travelers: "Trotty & Pam",
+  travelers: "Party of 4",
   season: "October 2026",
   tagline: "Tap a day for the timed plan. Place names open Google Maps. Food lists the local don't-miss bites.",
   overview: [
-    { label: "You land", value: "Oct 15 \u00b7 4:15" },
+    { label: "You land", value: "Oct 15 \u00b7 4:15 PM" },
     { label: "Tokyo days", value: "3" },
     { label: "Ship", value: "Oct 19\u201328" },
-    { label: "You fly", value: "Oct 28 \u00b7 4:25" }
+    { label: "You fly", value: "Oct 28 \u00b7 4:25 PM" }
   ],
   days: (function () {
     const ports = window.PORT_DAYS || [];
@@ -41,7 +41,7 @@ window.TRIP = {
 
   notes: [
     "Place names in the plan and food lists open Google Maps.",
-    "Book-these is only ramen class (Sunday 11:00) and Shibuya Sky (Sunday 16:20).",
+    "Book-these: Shibuya Sky (Sunday 16:20, sale Oct 4 00:00 Japan time) and RAGTIME (Friday 10:00, booking in progress). Ramen, chopsticks, Skytree and Samurai are booked.",
     "Friday: RAGTIME at 10:00. Do not walk from Ameyoko. Kimono after chopsticks, temple after dark.",
     "Saturday: confirm Oi flea on trx.jp. If cancelled, UNU market then the same lunch.",
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",

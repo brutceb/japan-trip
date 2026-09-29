@@ -7,7 +7,9 @@
   <meta name="description" content="Personal trip itinerary" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Japan trip" />
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#f4efe6" />
 </head>
 <body>
   <header class="nav">
@@ -20,6 +22,7 @@
         <a href="#book">Book</a>
         <a href="#days">Days</a>
         <a href="#pocket">Pocket</a>
+        <a href="pocket.html">Offline page</a>
         <button type="button" class="text-btn" id="jump-today">Today</button>
       </nav>
     </div>
@@ -46,7 +49,7 @@
     <section id="book">
       <div class="section-head">
         <h2>Book these</h2>
-        <p>Only Shibuya Sky is left. Window opens about five days out.</p>
+        <p>Shibuya Sky opens Oct 4 00:00 Japan time (Oct 3 11:00 AM Eastern). RAGTIME is in progress.</p>
       </div>
       <div class="book-list" id="book-list"></div>
     </section>
@@ -65,7 +68,7 @@
     <section id="pocket">
       <div class="section-head">
         <h2>Pocket</h2>
-        <p>Show a taxi driver the Japanese line. Copy if you need to paste.</p>
+        <p>Show a taxi driver the Japanese line. Every venue is on the <a href="pocket.html">offline pocket page</a>.</p>
       </div>
       <div class="pocket-grid">
         <article class="card taxi">
@@ -106,7 +109,7 @@
             <li>Police 110 &middot; Ambulance / fire 119</li>
             <li>Hyatt 03-3348-1234</li>
             <li>Suica / PASMO on the phone. Cash for tiny stalls and Omoide.</li>
-            <li>Add this page to your home screen. It works offline after one load.</li>
+            <li>Open <a href="pocket.html">the pocket page</a> once on Wi-Fi, then Add to Home Screen. After that it opens with no signal.</li>
           </ul>
         </article>
       </div>
@@ -114,14 +117,14 @@
   </main>
 
   <footer>
-    <div class="wrap">Personal itinerary &middot; add to home screen</div>
+    <div class="wrap">Personal itinerary &middot; <a href="pocket.html">offline pocket page</a></div>
   </footer>
 
-  <script src="days-bookends.js?v=15"></script>
-  <script src="days-tokyo.js?v=15"></script>
-  <script src="days-ports.js?v=15"></script>
-  <script src="itinerary.js?v=15"></script>
-  <script src="bookings.js?v=15"></script>
-  <script src="app.js?v=15"></script>
+  <script src="days-bookends.js?v=16"></script>
+  <script src="days-tokyo.js?v=16"></script>
+  <script src="days-ports.js?v=16"></script>
+  <script src="itinerary.js?v=16"></script>
+  <script src="bookings.js?v=16"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>

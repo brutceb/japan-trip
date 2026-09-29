@@ -32,7 +32,7 @@
   });
 
   const bookList = document.getElementById("book-list");
-  const statusLabel = { open: "Book now", booked: "Booked", optional: "Optional" };
+  const statusLabel = { open: "Book now", progress: "In progress", booked: "Booked", optional: "Optional" };
   (trip.bookings || []).forEach((item) => {
     const card = document.createElement("article");
     card.className = "book-item is-" + (item.status || "open");
@@ -231,4 +231,10 @@
       }
     });
   });
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
 })();

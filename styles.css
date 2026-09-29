@@ -185,6 +185,7 @@ section { margin-bottom: 64px; }
 }
 .book-item.is-booked .book-status { color: #2f6b3a; border-color: #b7d0bb; }
 .book-item.is-optional .book-status { color: var(--ink-soft); }
+.book-item.is-progress .book-status { color: var(--gold); border-color: #dcc79b; }
 .book-item.is-booked { opacity: 0.78; }
 .book-item .chip-link { display: inline-block; margin-top: 6px; font-size: 12px; }
 
