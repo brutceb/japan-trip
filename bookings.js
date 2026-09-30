@@ -9,10 +9,10 @@ window.TRIP.bookings = [
     linkLabel: "Tickets"
   },
   {
-    status: "progress",
+    status: "booked",
     when: "Oct 16 \u00b7 10:00 AM",
     name: "RAGTIME Coin Factory",
-    detail: "Booking in progress (3 online + 1 by email). Online form stops at 3; the shop asks groups of 4+ to email or call. One group per slot. Free change or cancel until Oct 15; same-day cancel is 100%. Pay at the shop.",
+    detail: "Booked for 4 at 10:00, confirmed by the shop by email Sep 30. Coin Plus Medallion class. No deposit; pay at the shop on the day. Cancel by Oct 15 (the day before); no same-day cancel. Shop 03-6231-7723.",
     link: "https://coubic.com/ragtime-coin",
     linkLabel: "Reserve"
   }
