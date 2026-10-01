@@ -123,8 +123,24 @@
       <div id="taxi-list"></div>
     </section>
 
-    <section id="hotel">
-      <div class="section-head"><h2>Hotel</h2><p>Hyatt Regency Tokyo</p></div>
+<section id="hotel">
+      <div class="section-head"><h2>Hotels</h2><p>Charlotte the night before, then Tokyo</p></div>
+      <div class="card">
+        <div class="kicker">Tue Oct 13 &ndash; Wed Oct 14</div>
+        <h3>Home2 Suites by Hilton Charlotte Airport</h3>
+        <p class="muted">4240 Scott Futrell Drive, Charlotte, NC 28214. About 10 minutes to CLT.</p>
+        <table>
+          <tr><th>Booking</th><th>Nights</th><th>Room</th></tr>
+          <tr><td class="ref">&hellip;1269</td><td>Oct 13 &ndash; 14 (1 night)</td><td>1 queen studio, nonsmoking, 2 adults</td></tr>
+        </table>
+        <ul>
+          <li>Confirmation <b>92501269</b>. Charlie Brutch. 40,000 Honors points. Gold.</li>
+          <li>Check-in <b>3:00 PM Oct 13</b>. Official checkout 12:00 PM Oct 14, but the flight is 9:35 AM. <b>Leave the hotel by 7:15 AM.</b> Be at CLT by 7:45.</li>
+          <li>Free build-your-own breakfast. Self-parking $11. Two free water bottles (Gold).</li>
+          <li>Cancel free until 11:59 PM Oct 12.</li>
+        </ul>
+        <p><a href="tel:+17043982940">Call hotel +1 704-398-2940</a> &middot; <a href="https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214">Map</a></p>
+      </div>
       <div class="card">
         <div class="kicker">Oct 15 &ndash; Oct 19</div>
         <h3>Hyatt Regency Tokyo</h3>
@@ -186,7 +202,7 @@
           <tr><td>Wed Oct 28</td><td>DL 294</td><td>HND 4:25 PM (Japan)</td><td>ATL 3:50 PM same day</td></tr>
           <tr><td>Wed Oct 28</td><td>DL 2813</td><td>ATL 7:05 PM</td><td>CLT 8:18 PM</td></tr>
         </table>
-        <p class="note">Oct 28: be inside Haneda Terminal 3 by 1:25 PM.</p>
+        <p class="note">Oct 13 night: Home2 Suites Charlotte Airport, conf 92501269. Leave by 7:15 AM Oct 14. Oct 28: be inside Haneda Terminal 3 by 1:25 PM.</p>
       </div>
     </section>
 
@@ -216,6 +232,16 @@
 
     /* ---------- Timed items by date (Japan time) ---------- */
     var DAYS = {
+      "2026-10-13": { label: "Tue Oct 13 \u00b7 Charlotte hotel", items: [
+        ["3:00 PM", "Check in, Home2 Suites Charlotte Airport", "4240 Scott Futrell Dr. Conf 92501269. 1 queen studio. Parking $11.", "ok"],
+        ["Evening", "Easy night. Pack for a 7:15 AM leave.", "Breakfast is included if you want it before the airport.", ""]
+      ]},
+      "2026-10-14": { label: "Wed Oct 14 \u00b7 Fly", items: [
+        ["7:15 AM", "Leave Home2 Suites", "Official checkout is noon. Do not wait. About 10 min to CLT.", "ok"],
+        ["7:45 AM", "At Charlotte airport", "DL 1639 at 9:35 AM.", ""],
+        ["9:35 AM", "CLT to DTW, DL 1639", "Land Detroit 11:31 AM. Stay airside.", ""],
+        ["1:45 PM", "DTW to Haneda, DL 275", "Lands Thu Oct 15 4:15 PM Japan time.", ""]
+      ]},
       "2026-10-15": { label: "Thu Oct 15 \u00b7 Arrive", items: [
         ["4:15 PM", "Land Haneda T3 (DL 275)", "Immigration + bags 45\u201375 min.", "ok"],
         ["5:30\u20137:15", "Airport to Hyatt", "Train 40\u201355 min + walk, limousine bus 50\u201370 min, taxi about 30 min.", ""],
@@ -325,6 +351,7 @@
       { id: "ramen", when: "Sun Oct 18 \u00b7 11:00 AM\u201312:00", name: "Ramen class, Shinjuku Ale", status: "ok", ref: "\u2026VFZH", arrive: "10:55 AM, 2F (stairs only). Bring ID", cancel: "Free until Oct 17 11:00 AM Japan time", paid: "$114.36 charged Oct 15", phone: "Halue +81 3 6205 5970" },
       { id: "ragtime", when: "Fri Oct 16 \u00b7 10:00\u201311:30 AM", name: "RAGTIME Coin Factory", status: "ok", ref: "shop email Sep 30 (no ref no.)", arrive: "9:55 AM", cancel: "Cancel by Oct 15 (day before). No same-day cancel", paid: "No deposit. Coin Plus Medallion, pay at shop", phone: "03-6231-7723" },
       { id: "shibuya", when: "Sun Oct 18 \u00b7 target 4:20 PM (backup 4:40)", name: "Shibuya Sky", status: "open", ref: "not booked", arrive: "10 min before slot. No bags or hats on the roof", cancel: "Free until the day before", paid: "Sale opens Oct 4 00:00 Japan time = Oct 3 11:00 AM Eastern", phone: "03-4221-0229" },
+      { id: "home2", when: "Tue Oct 13 3:00 PM \u2013 Wed Oct 14", name: "Home2 Suites Charlotte Airport", status: "ok", ref: "\u20261269", arrive: "Check-in 3:00 PM. Leave by 7:15 AM Oct 14 for the 9:35 flight", cancel: "Free until 11:59 PM Oct 12", paid: "40,000 points. 1 queen studio, 2 adults", phone: "+1 704-398-2940" },
       { id: "hyatt1", when: "Oct 15\u201318", name: "Hyatt Regency Tokyo, booking 1", status: "ok", ref: "\u20265822", arrive: "Check-in from 2:00 PM", cancel: "By Oct 14 11:59 PM Japan time", paid: "Points", phone: "+81 3 3348 1234" },
       { id: "hyatt2", when: "Oct 18\u201319", name: "Hyatt Regency Tokyo, booking 2", status: "ok", ref: "\u20260069", arrive: "Checkout Oct 19 11:00 AM", cancel: "By Oct 17 11:59 PM Japan time", paid: "Points", phone: "+81 3 3348 1234" }
     ];
