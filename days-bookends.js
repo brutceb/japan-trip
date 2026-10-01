@@ -1,15 +1,46 @@
 window.ARRIVAL_DAYS = [
   {
+    id: "oct-13",
+    date: "Oct 13",
+    weekday: "Tue",
+    kind: "Hotel",
+    port: "Charlotte — night before the flight",
+    summary: "Home2 Suites Charlotte Airport. Check-in 3:00 PM. Conf 92501269. Leave by 7:15 AM Wednesday for the 9:35 flight.",
+    hours: "Check-in 3:00 PM",
+    stay: "Home2 Suites by Hilton Charlotte Airport",
+    map: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214",
+    plan: [
+      { time: "3:00 PM", title: "Check in, Home2 Suites Charlotte Airport", detail: "4240 Scott Futrell Drive, Charlotte, NC 28214. Confirmation 92501269. Charlie Brutch, 2 adults, 1 queen studio, nonsmoking. 40,000 points. About 10 minutes to CLT.", link: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214" },
+      { time: "Evening", title: "Easy night, bags ready", detail: "Free build-your-own breakfast in the morning if you want it. Self-parking $11. Official checkout is noon Wednesday. Do not use that. Flight is 9:35 AM.", link: "https://maps.google.com/?q=Home2+Suites+Charlotte+Airport" },
+      { time: "7:15 AM Wed", title: "Leave for CLT", detail: "Be at the airport by 7:45. DL 1639 at 9:35. Phone 704-398-2940.", link: "https://maps.google.com/?q=Charlotte+Douglas+Airport" }
+    ],
+    options: [
+      { name: "Hotel breakfast", effort: "Included", timeNeeded: "20 min", items: ["Build-your-own breakfast. Only if you are out the door by 7:15."] },
+      { name: "Skip breakfast", effort: "Safest", timeNeeded: "0", items: ["Eat at CLT. The flight is the constraint, not checkout."] }
+    ],
+    food: [
+      { name: "Home2 breakfast", note: "Included. Eggs, meats, cheeses, breads. Only if it does not push you past 7:15.", link: "https://maps.google.com/?q=Home2+Suites+Charlotte+Airport" },
+      { name: "CLT terminal meal", note: "Backup if you leave without eating.", link: "https://maps.google.com/?q=Charlotte+Douglas+Airport+food" }
+    ],
+    logistics: [
+      "Confirmation 92501269. Check-in Tue Oct 13 3:00 PM. Official checkout Wed Oct 14 12:00 PM.",
+      "Leave by 7:15 AM Oct 14. Be at CLT by 7:45 for DL 1639 at 9:35.",
+      "1 queen studio, 2 adults, 40,000 points. Self-parking $11. Cancel free until 11:59 PM Oct 12.",
+      "Phone +1 704-398-2940."
+    ]
+  },
+  {
     id: "oct-14",
     date: "Oct 14",
     weekday: "Wed",
     kind: "Fly",
     port: "CLT \u2192 DTW \u2192 Haneda",
-    summary: "CLT 9:35a DL 1639 to DTW 11:31a. DTW 1:45p DL 275 overnight. Land Haneda Thu 4:15p. Vague travel day only.",
+    summary: "Leave Home2 Suites by 7:15a. CLT 9:35a DL 1639 to DTW 11:31a. DTW 1:45p DL 275 overnight. Land Haneda Thu 4:15p.",
     hours: "9:35a start",
     stay: "In the air",
     map: "https://maps.google.com/?q=Charlotte+Douglas+Airport",
     plan: [
+      { time: "7:15a", title: "Leave Home2 Suites", detail: "4240 Scott Futrell Drive. Conf 92501269. Official checkout is noon. Do not wait. About 10 minutes to CLT. Be at the airport by 7:45.", link: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214" },
       { time: "9:35\u201311:31a", title: "CLT to DTW \u00b7 DL 1639", detail: "Leave Charlotte 9:35a. Land Detroit 11:31a. Stay airside.", link: "https://maps.google.com/?q=Charlotte+Douglas+Airport" },
       { time: "11:31a\u20131:45p", title: "DTW layover", detail: "About 2 hours 14 minutes. Do not leave the terminal. Eat a real meal here. Next sit-down is Tokyo night.", link: "https://maps.google.com/?q=Detroit+Metro+Airport+food" },
       { time: "1:45p", title: "DTW to Haneda \u00b7 DL 275", detail: "Overnight. Lands Thursday 4:15p Japan time. Sleep if you can. No Tokyo plan today.", link: "https://maps.google.com/?q=Haneda+Airport+Terminal+3" }
@@ -23,6 +54,7 @@ window.ARRIVAL_DAYS = [
       { name: "Plane snack", note: "Enough until Haneda." }
     ],
     logistics: [
+      "Leave Home2 Suites by 7:15a. Conf 92501269. Be at CLT by 7:45.",
       "Wed 14 Oct \u00b7 CLT 9:35a \u2192 DTW 11:31a \u00b7 DL 1639.",
       "Wed 14 Oct \u00b7 DTW 1:45p \u2192 HND Thu 15 Oct 4:15p \u00b7 DL 275.",
       "Friends already in Japan from Oct 7. You fly home Oct 28 at 4:25."
