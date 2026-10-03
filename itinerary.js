@@ -43,7 +43,7 @@ window.TRIP = {
 
   notes: [
     "Place names in the plan and food lists open Google Maps.",
-    "Book-these: Shibuya Sky only (Sunday 16:20, sale Oct 4 00:00 Japan time). RAGTIME, ramen, chopsticks, Skytree and Samurai are booked.",
+    "All booked: Shibuya Sky (Sunday 16:20, 4 tickets), RAGTIME (Friday 10:00), ramen, chopsticks, Skytree and Samurai.",
     "Oct 13: Home2 Suites Charlotte Airport, conf 92501269. Leave by 7:15 AM Oct 14.",
     "Friday: RAGTIME at 10:00 (booked for 4). Do not walk from Ameyoko. Asakusa lunch, Nakamise and kimono 12:40\u20132:40 PM, before chopsticks at 3:00. Temple after dark.",
     "Saturday: confirm Oi flea on trx.jp. If cancelled, UNU market then the same lunch.",
