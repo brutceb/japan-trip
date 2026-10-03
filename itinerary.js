@@ -24,13 +24,13 @@ window.TRIP = {
       .concat(window.END_DAYS || []);
   })(),
   lodging: [
-    { city: "Charlotte", name: "Home2 Suites by Hilton Charlotte Airport", nights: "Oct 13\u201314", note: "Conf 92501269. Check-in 3:00 PM Oct 13. Leave by 7:15 AM Oct 14 for the 9:35 flight. 4240 Scott Futrell Drive.", link: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214" },
+    { city: "Charlotte", name: "Home2 Suites by Hilton Charlotte Airport", nights: "Oct 13\u201314", note: "Conf …1269. Check-in 3:00 PM Oct 13. Leave by 7:15 AM Oct 14 for the 9:35 flight. 4240 Scott Futrell Drive.", link: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214" },
     { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 15\u201319", note: "You arrive Oct 15. Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18. Checkout 11:00 Oct 19.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
     { city: "Cruise", name: "Diamond Princess", nights: "Oct 19\u201328", note: "Osanbashi check-in 12:00\u201314:00. All-aboard 14:00. Sail 15:00 Oct 19. Dock 6:30 AM Oct 28.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" }
   ],
 
   transport: [
-    { when: "Oct 13", what: "Home2 Suites Charlotte Airport", detail: "Check-in 3:00 PM. Conf 92501269. 4240 Scott Futrell Drive. Leave by 7:15 AM Oct 14." },
+    { when: "Oct 13", what: "Home2 Suites Charlotte Airport", detail: "Check-in 3:00 PM. Conf …1269. 4240 Scott Futrell Drive. Leave by 7:15 AM Oct 14." },
     { when: "Oct 14", what: "CLT 9:35a DL 1639 \u2192 DTW 11:31a \u00b7 DTW 1:45p DL 275 \u2192 HND", detail: "Leave Home2 by 7:15a. Be at CLT by 7:45. Lands Thursday 4:15p." },
     { when: "Oct 15", what: "HND 4:15p \u2192 Hyatt", detail: "Out of airport 5:15\u20135:45. Train 40\u201355 min + 9-min walk, bus 50\u201370 min, or taxi ~30 min. Check in about 6:30\u20137:45." },
     { when: "Oct 16", what: "Yamanote + taxi/Ginza + Tobu Skytree Line", detail: "Shinjuku to Ueno Park Exit. Taxi or Ginza Line to RAGTIME at 10:00. One-stop Tobu to Skytree." },
@@ -44,7 +44,7 @@ window.TRIP = {
   notes: [
     "Place names in the plan and food lists open Google Maps.",
     "All booked: Shibuya Sky (Sunday 16:20, 4 tickets), RAGTIME (Friday 10:00), ramen, chopsticks, Skytree and Samurai.",
-    "Oct 13: Home2 Suites Charlotte Airport, conf 92501269. Leave by 7:15 AM Oct 14.",
+    "Oct 13: Home2 Suites Charlotte Airport, conf …1269. Leave by 7:15 AM Oct 14.",
     "Friday: RAGTIME at 10:00 (booked for 4). Do not walk from Ameyoko. Asakusa lunch, Nakamise and kimono 12:40\u20132:40 PM, before chopsticks at 3:00. Temple after dark.",
     "Saturday: confirm Oi flea on trx.jp. If cancelled, UNU market then the same lunch.",
     "Sunday dinner is pick-one. Do not lock Maru Bengara.",
