@@ -26,7 +26,7 @@ window.TRIP = {
   lodging: [
     { city: "Charlotte", name: "Home2 Suites by Hilton Charlotte Airport", nights: "Oct 13\u201314", note: "Conf …1269. Check-in 3:00 PM Oct 13. Leave by 7:15 AM Oct 14 for the 9:35 flight. 4240 Scott Futrell Drive.", link: "https://maps.google.com/?q=4240+Scott+Futrell+Drive+Charlotte+NC+28214" },
     { city: "Tokyo", name: "Hyatt Regency Tokyo, Nishi-Shinjuku", nights: "Oct 15\u201319", note: "You arrive Oct 15. Walk to Shinjuku West Exit. Pack ship-day clothes the night of Oct 18. Checkout 11:00 Oct 19.", link: "https://maps.google.com/?q=Hyatt+Regency+Tokyo+Nishi-Shinjuku" },
-    { city: "Cruise", name: "Diamond Princess", nights: "Oct 19\u201328", note: "Osanbashi check-in 12:00\u201314:00. All-aboard 14:00. Sail 15:00 Oct 19. Dock 6:30 AM Oct 28.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" }
+    { city: "Cruise", name: "Diamond Princess", nights: "Oct 19\u201328", note: "Princess Japan Explorer on the Diamond Princess. Cabin E412, Emerald deck 8, port side, midship. Oceanview, partially obstructed by lifeboats (Cat OV). Queen bed. Booking …5KDC. Osanbashi check-in 12:00\u201314:00. All-aboard 14:00. Sail 15:00 Oct 19. Dock 6:30 AM Oct 28.", link: "https://maps.google.com/?q=Osanbashi+Yokohama+International+Passenger+Terminal" }
   ],
 
   transport: [
@@ -36,9 +36,9 @@ window.TRIP = {
     { when: "Oct 16", what: "Yamanote + taxi/Ginza + Tobu Skytree Line", detail: "Shinjuku to Ueno Park Exit. Taxi or Ginza Line to RAGTIME at 10:00. One-stop Tobu to Skytree." },
     { when: "Oct 17", what: "JR + Tokyo Monorail + Yamanote", detail: "Shinjuku to Hamamatsucho to Oikeibajo-mae, then Harajuku Takeshita Exit." },
     { when: "Oct 18", what: "JR Yamanote", detail: "Shinjuku East to Shibuya and back." },
-    { when: "Oct 19", what: "Hyatt to Osanbashi \u00b7 check-in 12:00\u201314:00 \u00b7 sail 15:00", detail: "Leave hotel by 11:15. Recommended at the terminal 13:00. Official latest / all-aboard 14:00." },
+    { when: "Oct 19", what: "Hyatt to Osanbashi \u00b7 check-in 12:00\u201314:00 \u00b7 sail 15:00", detail: "Check out by 11:00. Taxi from the Hyatt door about 45\u201360 min, roughly 10,000\u201316,000 yen per car. Train with bags about 75\u201390 min. At the terminal by 12:00\u201313:00. Hard cutoff 14:00." },
     { when: "Oct 25", what: "Private sedan from Aburatsu", detail: "Port pickup 8:30. Back about 1:45." },
-    { when: "Oct 28", what: "HND 4:25p DL 294 \u2192 ATL 3:50p \u00b7 ATL 7:05p DL 2813 \u2192 CLT 8:18p", detail: "Dock 6:30a. Off ship 8:00\u20139:30. Airport by 1:25." }
+    { when: "Oct 28", what: "HND 4:25p DL 294 \u2192 ATL 3:50p \u00b7 ATL 7:05p DL 2813 \u2192 CLT 8:18p", detail: "Dock 6:30a. Off ship 8:00\u20139:30. Osanbashi to HND T3: taxi 30\u201345 min, or taxi to YCAT then limousine bus about 40 min. Airport by 1:25." }
   ],
 
   notes: [
@@ -52,6 +52,7 @@ window.TRIP = {
     "Shimizu still needs a walking plan. Ship there 13:00\u201319:00.",
     "You leave CLT Oct 14 at 9:35a on DL 1639, then DTW 1:45p on DL 275. Land Haneda Oct 15 at 4:15p. You fly Oct 28: HND 4:25p DL 294 to ATL, then ATL 7:05p DL 2813 to CLT 8:18p. Be at Haneda by 1:25.",
     "Sea days: Oct 20 full sea, Oct 23 Kanmon Straits 8:00\u201310:00 on deck.",
-    "Oct 19: Princess check-in about 12:00. Recommended at Osanbashi by 13:00. Official all-aboard 14:00. Sail 15:00."
+    "Oct 19: Princess check-in about 12:00. Recommended at Osanbashi by 13:00. Official all-aboard 14:00. Sail 15:00.",
+    "Cruise: Princess Japan Explorer, Diamond Princess, Oct 19\u201328, Yokohama round trip. Cabin E412 (Emerald deck 8, port, midship), Oceanview partially obstructed (Cat OV), queen. Booking \u20265KDC."
   ]
 };
